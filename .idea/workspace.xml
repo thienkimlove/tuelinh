@@ -2,116 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="124f937c-b277-47f7-a9d8-c5f97b71bfd6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/article-220x130-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/article-220x130-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/article-220x130-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/article-220x130-4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/ava01-256x256.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/ava02-256x256.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/ava03-256x256.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/avatar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/banner-1356x325.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/banner-1356x450.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/banner-1356x658-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/banner-1356x658-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/banner-1356x658-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/bg_arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/bg_arrow_affter.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/bg_arrow_before.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/bg_cup.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/bg_cup_content.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/bg_height.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/bg_item.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/bg_menu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/bg_news.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/bg_product.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/bg_product.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/bg_right.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/bg_u1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/bg_u2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/bg_u3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/bg_video.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/bot_menu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/bottom_img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/content_menu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/controls.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/cup.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/cup01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/cup02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/cup03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/cup04.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/cup05.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/detail-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/footer_img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/header.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/i_video.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/leaf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/left01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/left_img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/map.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/maptuelinh.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/modal_cls.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/news.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/overlay.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/pr01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/product-256x256-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/product-256x256-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/product-256x256-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/product-256x256-4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/product-256x256-5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/product-256x256-5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/product-500x350-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/product-500x350-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/product-500x350-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/product-500x350-4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/social.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/example/social01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/top_menu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/wooden_frame.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/bg/wooden_frame.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/contact.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/footer.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/gioithieu.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/header.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/html5.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/ie.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/menu_right.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/modernizr.custom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/lang/vi/pagination.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/lang/vi/passwords.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/product.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/thuvien.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/tintuc.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/tinyduoc-khoedep.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/tinyduoc-mebe.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/tinyduoc-yhoccotruyen.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/tracuu-daicuongvebenh-detail.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/tracuu-daicuongvebenh.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/tracuu-danhsach-timthuoctheobenh-detail.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/tracuu-danhsach-timthuoctheobenh.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/tracuu-thuocnamtribenh-detail.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/tracuu-thuocnamtribenh.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/tracuu-timthuoctheobenh.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/tuthien.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/tuyendung.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/lang/vi/validation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/errors/503.blade.php" afterPath="$PROJECT_DIR$/resources/views/errors/503.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/factories/ModelFactory.php" afterPath="$PROJECT_DIR$/database/factories/ModelFactory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/image.php" afterPath="$PROJECT_DIR$/config/image.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="tuelinh.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -135,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tracuu-timthuoctheobenh.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/frontend/tracuu-timthuoctheobenh.blade.php">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.6236674" vertical-offset="8227" max-vertical-offset="10023">
-              <caret line="211" column="35" selection-start-line="211" selection-start-column="35" selection-end-line="211" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.123157896" vertical-offset="0" max-vertical-offset="950">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -164,7 +55,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2015_07_03_064428_create_settings_table.php" />
         <option value="$PROJECT_DIR$/storage/logs/laravel.log" />
         <option value="$PROJECT_DIR$/resources/views/admin.blade.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/resources/views/admin/setting/form.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/SettingRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" />
@@ -204,6 +94,7 @@
         <option value="$PROJECT_DIR$/resources/views/frontend/tracuu-thuocnamtribenh.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/tracuu-thuocnamtribenh-detail.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/tracuu-timthuoctheobenh.blade.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -536,25 +427,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/lang/vi/validation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5059459" vertical-offset="0" max-vertical-offset="5694">
-          <caret line="9" column="77" selection-start-line="9" selection-start-column="77" selection-end-line="9" selection-end-column="77" />
-          <folding>
-            <marker date="1435775405000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435775405000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435775405000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435775405000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435775405000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435775405000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435775405000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435775405000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435775405000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435775405000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.6609808" vertical-offset="1558" max-vertical-offset="2496">
@@ -7131,6 +7003,80 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.6236674" vertical-offset="8227" max-vertical-offset="10023">
           <caret line="211" column="35" selection-start-line="211" selection-start-column="35" selection-end-line="211" selection-end-column="35" />
+          <folding>
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435920083425" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.123157896" vertical-offset="0" max-vertical-offset="950">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
