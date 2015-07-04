@@ -1,12 +1,6 @@
 @extends('frontend')
 @section('content')
-    <section class="box-banner" id="box-banner" data-set="space-slider" data-fix="header">
-        <h1>
-            <a class="thumb" href="" title="">
-                <img src="images/example/banner-1356x450.jpg" alt="" width="1356" height="450">
-            </a>
-        </h1>
-    </section><!--//box-banner-->
+
     <section data-position="true" class="box-news" id="box-news">
         <div class="fix">
             <div class="layout">
@@ -16,34 +10,34 @@
                         <div class="data">
                             <div class="col-left">
                                 <ul class="list">
-                                    <li><a href="">1.Bệnh suy dinh </a></li>
-                                    <li><a href="">2.Bệnh còi xương suy dinh </a></li>
-                                    <li><a href="">3.dưỡng</a></li>
-                                    <li><a href="">4.Bệnh Crohn</a></li>
-                                    <li><a href="">5.Bệnh cúm</a></li>
-                                    <li><a href="">6.Bệnh dại</a></li>
-                                    <li><a href="">7.Bệnh ghẻ</a></li>
-                                    <li><a href="">8.Bệnh gút</a></li>
-                                    <li><a href="">9.Bệnh hen phế quản</a></li>
-                                    <li><a href="">10.Bệnh hẹp van hai lá</a></li>
-                                    <li><a href="">11.Bệnh HIV</a></li>
-                                    <li><a href="">12.Bệnh ho</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">1.Bệnh suy dinh </a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">2.Bệnh còi xương suy dinh </a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">3.dưỡng</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">4.Bệnh Crohn</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">5.Bệnh cúm</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">6.Bệnh dại</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">7.Bệnh ghẻ</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">8.Bệnh gút</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">9.Bệnh hen phế quản</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">10.Bệnh hẹp van hai lá</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">11.Bệnh HIV</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">12.Bệnh ho</a></li>
                                 </ul>
                             </div>
                             <div class="col-right">
                                 <ul class="list">
-                                    <li><a href="">1.Bệnh suy dinh </a></li>
-                                    <li><a href="">2.Bệnh còi xương suy dinh </a></li>
-                                    <li><a href="">3.dưỡng</a></li>
-                                    <li><a href="">4.Bệnh Crohn</a></li>
-                                    <li><a href="">5.Bệnh cúm</a></li>
-                                    <li><a href="">6.Bệnh dại</a></li>
-                                    <li><a href="">7.Bệnh ghẻ</a></li>
-                                    <li><a href="">8.Bệnh gút</a></li>
-                                    <li><a href="">9.Bệnh hen phế quản</a></li>
-                                    <li><a href="">10.Bệnh hẹp van hai lá</a></li>
-                                    <li><a href="">11.Bệnh HIV</a></li>
-                                    <li><a href="">12.Bệnh ho</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">1.Bệnh suy dinh </a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">2.Bệnh còi xương suy dinh </a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">3.dưỡng</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">4.Bệnh Crohn</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">5.Bệnh cúm</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">6.Bệnh dại</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">7.Bệnh ghẻ</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">8.Bệnh gút</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">9.Bệnh hen phế quản</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">10.Bệnh hẹp van hai lá</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">11.Bệnh HIV</a></li>
+                                    <li><a href="{{url('tracuu-daicuongvebenh-chitiet')}}">12.Bệnh ho</a></li>
                                 </ul>
                             </div>
                         </div>

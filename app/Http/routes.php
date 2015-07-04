@@ -16,14 +16,14 @@ Route::get('/', function () {
     return view('frontend.index', compact('page'));
 });
 
-Route::get('product', function () {
+Route::get('sanpham', function () {
     $page = 'page-solution';
-    return view('frontend.product', compact('page'));
+    return view('frontend.sanpham', compact('page'));
 });
 
-Route::get('contact', function () {
+Route::get('lienhe', function () {
     $page = 'page-solution';
-    return view('frontend.contact', compact('page'));
+    return view('frontend.lienhe', compact('page'));
 });
 
 Route::get('gioithieu', function () {
@@ -53,19 +53,16 @@ Route::get('tuyendung', function () {
 
 
 
-Route::get('delivery-system', function () {
+
+
+Route::get('hethongphanphoi', function () {
     $page = 'page-solution';
-    return view('frontend.delivery-system', compact('page'));
+    return view('frontend.hethongphanphoi', compact('page'));
 });
 
-Route::get('delivery-system-detail', function () {
+Route::get('hethongphanphoi-chitiet', function () {
     $page = 'page-solution';
-    return view('frontend.delivery-system-detail', compact('page'));
-});
-
-Route::get('khoe-dep', function () {
-    $page = 'page-solution';
-    return view('frontend.khoe-dep', compact('page'));
+    return view('frontend.hethongphanphoi-chitiet', compact('page'));
 });
 
 Route::get('tinyduoc-khoedep', function () {
@@ -88,18 +85,18 @@ Route::get('tracuu-daicuongvebenh', function () {
     $page = 'page-solution';
     return view('frontend.tracuu-daicuongvebenh', compact('page'));
 });
-Route::get('tracuu-daicuongvebenh-detail', function () {
+Route::get('tracuu-daicuongvebenh-chitiet', function () {
     $page = 'page-solution';
-    return view('frontend.tracuu-daicuongvebenh-detail', compact('page'));
+    return view('frontend.tracuu-daicuongvebenh-chitiet', compact('page'));
 });
 
 Route::get('tracuu-danhsach-timthuoctheobenh', function () {
     $page = 'page-solution';
     return view('frontend.tracuu-danhsach-timthuoctheobenh', compact('page'));
 });
-Route::get('tracuu-danhsach-timthuoctheobenh-detail', function () {
+Route::get('tracuu-danhsach-timthuoctheobenh-chitiet', function () {
     $page = 'page-solution';
-    return view('frontend.tracuu-danhsach-timthuoctheobenh-detail', compact('page'));
+    return view('frontend.tracuu-danhsach-timthuoctheobenh-chitiet', compact('page'));
 });
 
 
@@ -107,9 +104,9 @@ Route::get('tracuu-thuocnamtribenh', function () {
     $page = 'page-solution';
     return view('frontend.tracuu-thuocnamtribenh', compact('page'));
 });
-Route::get('tracuu-thuocnamtribenh-detail', function () {
+Route::get('tracuu-thuocnamtribenh-chitiet', function () {
     $page = 'page-solution';
-    return view('frontend.tracuu-thuocnamtribenh-detail', compact('page'));
+    return view('frontend.tracuu-thuocnamtribenh-chitiet', compact('page'));
 });
 
 Route::get('tracuu-timthuoctheobenh', function () {

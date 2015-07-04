@@ -1,18 +1,12 @@
 @extends('frontend')
 @section('content')
-    <section class="box-banner" id="box-banner" data-set="space-slider" data-fix="header">
-        <h1>
-            <a class="thumb" href="" title="">
-                <img src="images/example/banner-1356x450.jpg" alt="" width="1356" height="450">
-            </a>
-        </h1>
-    </section><!--//box-banner-->
+
     <section data-position="true" class="box-news" id="box-news">
         <div class="fix">
             <div class="layout">
                 <div class="layout-left">
                     <article class="detail" id="data-detail">
-                        <h1 class="title">Bệnh còi xương suy dinh</h1>
+                        <h1 class="title">Trà Astiso</h1>
                         <div class="data">
                             <p style="text-align: center">
                                 <img src="images/example/detail-1.jpg" width="835" height="424" alt=""/>
@@ -97,6 +91,30 @@
                             </div>
                         </div>
                     </div><!--//boxNotify-->
+                    <div class="box-utility">
+                        <div class="list-utility">
+                            <a href=""><img src="images/bg/bg_u1.png" alt="B1"></a>
+                            <a href=""><img src="images/bg/bg_u2.png" alt="B1"></a>
+                            <a href=""><img src="images/bg/bg_u3.png" alt="B1"></a>
+                        </div>
+                    </div>
+                    <div class="box-hot">
+                        <div class="head">
+                            Tin nổi bật
+                        </div>
+                        <div class="item">
+                            <ul class="list-news">
+                                <li><a href="#">Cây thuốc quý</a></li>
+                                <li><a href="#">Cây Bách Bệnh công. dụng và Cây mật nhân tăng cường sinh lý cho nam giới</a></li>
+                                <li><a href="#">Công dụng của Giảo cổ lam</a></li>
+                                <li><a href="#">Cây Bách Bệnh công dụng và cách dùng</a></li>
+                                <li><a href="#">Cây thuốc quý</a></li>
+                                <li><a href="#">Cây Bách Bệnh công. dụng và Cây mật nhân tăng cường sinh lý cho nam giới</a></li>
+                                <li><a href="#">Công dụng của Giảo cổ lam</a></li>
+                                <li><a href="#">Cây Bách Bệnh công dụng và cách dùng</a></li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="box-hot">
                         <div class="head">
                             Cây thuốc - Vị thuốc
@@ -128,13 +146,6 @@
                                 <li><a href="#">Cơ bản về sơ gan</a></li>
                                 <li><a href="#">Sản phẩm giải độc gan</a></li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="box-utility">
-                        <div class="list-utility">
-                            <a href=""><img src="images/bg/bg_u1.png" alt="B1"></a>
-                            <a href=""><img src="images/bg/bg_u2.png" alt="B1"></a>
-                            <a href=""><img src="images/bg/bg_u3.png" alt="B1"></a>
                         </div>
                     </div>
                     <div class="box-form-email">

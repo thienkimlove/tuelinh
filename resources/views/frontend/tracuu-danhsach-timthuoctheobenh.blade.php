@@ -1,12 +1,6 @@
 @extends('frontend')
 @section('content')
-    <section class="box-banner" id="box-banner" data-set="space-slider" data-fix="header">
-        <h1>
-            <a class="thumb" href="" title="">
-                <img src="images/example/banner-1356x450.jpg" alt="" width="1356" height="450">
-            </a>
-        </h1>
-    </section><!--//box-banner-->
+
     <section data-position="true" class="box-news" id="box-news">
         <div class="fix">
             <div class="layout">
@@ -14,12 +8,12 @@
                     <div class="box-list-news">
                         <h1 class="title">Thuốc chữa bệnh</h1>
                         <article class="item">
-                            <a href="" title="">
+                            <a href="{{url('tracuu-danhsach-timthuoctheobenh-chitiet')}}" title="">
                                 <img src="images/example/article-220x130-1.jpg" width="220" height="130" alt=""/>
                             </a>
                             <time class="time" datetime="2014/09/20">20/09/2014</time>
                             <h3>
-                                <a href="" title="">
+                                <a href="{{url('tracuu-danhsach-timthuoctheobenh-chitiet')}}" title="">
                                     “Chìa khóa” tiết kiệm năng lượng trong gia đình
                                 </a>
                             </h3>
@@ -28,12 +22,12 @@
                             </p>
                         </article>
                         <article class="item">
-                            <a href="" title="">
+                            <a href="{{url('tracuu-danhsach-timthuoctheobenh-chitiet')}}" title="">
                                 <img src="images/example/article-220x130-2.jpg" width="220" height="130" alt=""/>
                             </a>
                             <time class="time" datetime="2014/09/20">20/09/2014</time>
                             <h3>
-                                <a href="" title="">
+                                <a href="{{url('tracuu-danhsach-timthuoctheobenh-chitiet')}}" title="">
                                     Nâng cao kỹ năng xúc tiến thị trường, gia tăng giá trị sản phẩm
                                 </a>
                             </h3>
@@ -42,12 +36,12 @@
                             </p>
                         </article>
                         <article class="item">
-                            <a href="" title="">
+                            <a href="{{url('tracuu-danhsach-timthuoctheobenh-chitiet')}}" title="">
                                 <img src="images/example/article-220x130-3.jpg" width="220" height="130" alt=""/>
                             </a>
                             <time class="time" datetime="2014/09/20">20/09/2014</time>
                             <h3>
-                                <a href="" title="">
+                                <a href="{{url('tracuu-danhsach-timthuoctheobenh-chitiet')}}" title="">
                                     “Lẩu Hoà Bình” - giải kim cương Cuộc thi: “Mẹ ơi! Con làm được”
                                 </a>
                             </h3>
@@ -56,12 +50,12 @@
                             </p>
                         </article>
                         <article class="item">
-                            <a href="" title="">
+                            <a href="{{url('tracuu-danhsach-timthuoctheobenh-chitiet')}}" title="">
                                 <img src="images/example/article-220x130-4.jpg" width="220" height="130" alt=""/>
                             </a>
                             <time class="time" datetime="2014/09/20">20/09/2014</time>
                             <h3>
-                                <a href="" title="">
+                                <a href="{{url('tracuu-danhsach-timthuoctheobenh-chitiet')}}" title="">
                                     Hơn 500 Tình nguyện viên tham gia đạp xe và dọn vệ sinh hưởng ứng Giờ Trái đất 2014
                                 </a>
                             </h3>
@@ -70,12 +64,12 @@
                             </p>
                         </article>
                         <article class="item">
-                            <a href="" title="">
+                            <a href="{{url('tracuu-danhsach-timthuoctheobenh-chitiet')}}" title="">
                                 <img src="images/example/article-220x130-1.jpg" width="220" height="130" alt=""/>
                             </a>
                             <time class="time" datetime="2014/09/20">20/09/2014</time>
                             <h3>
-                                <a href="" title="">
+                                <a href="{{url('tracuu-danhsach-timthuoctheobenh-chitiet')}}" title="">
                                     “Chìa khóa” tiết kiệm năng lượng trong gia đình
                                 </a>
                             </h3>
@@ -84,12 +78,12 @@
                             </p>
                         </article>
                         <article class="item">
-                            <a href="" title="">
+                            <a href="{{url('tracuu-danhsach-timthuoctheobenh-chitiet')}}" title="">
                                 <img src="images/example/article-220x130-2.jpg" width="220" height="130" alt=""/>
                             </a>
                             <time class="time" datetime="2014/09/20">20/09/2014</time>
                             <h3>
-                                <a href="" title="">
+                                <a href="{{url('tracuu-danhsach-timthuoctheobenh-chitiet')}}" title="">
                                     Nâng cao kỹ năng xúc tiến thị trường, gia tăng giá trị sản phẩm
                                 </a>
                             </h3>
@@ -98,12 +92,12 @@
                             </p>
                         </article>
                         <article class="item">
-                            <a href="" title="">
+                            <a href="{{url('tracuu-danhsach-timthuoctheobenh-chitiet')}}" title="">
                                 <img src="images/example/article-220x130-3.jpg" width="220" height="130" alt=""/>
                             </a>
                             <time class="time" datetime="2014/09/20">20/09/2014</time>
                             <h3>
-                                <a href="" title="">
+                                <a href="{{url('tracuu-danhsach-timthuoctheobenh-chitiet')}}" title="">
                                     “Lẩu Hoà Bình” - giải kim cương Cuộc thi: “Mẹ ơi! Con làm được”
                                 </a>
                             </h3>
@@ -112,12 +106,12 @@
                             </p>
                         </article>
                         <article class="item last">
-                            <a href="" title="">
+                            <a href="{{url('tracuu-danhsach-timthuoctheobenh-chitiet')}}" title="">
                                 <img src="images/example/article-220x130-4.jpg" width="220" height="130" alt=""/>
                             </a>
                             <time class="time" datetime="2014/09/20">20/09/2014</time>
                             <h3>
-                                <a href="" title="">
+                                <a href="{{url('tracuu-danhsach-timthuoctheobenh-chitiet')}}" title="">
                                     Hơn 500 Tình nguyện viên tham gia đạp xe và dọn vệ sinh hưởng ứng Giờ Trái đất 2014
                                 </a>
                             </h3>

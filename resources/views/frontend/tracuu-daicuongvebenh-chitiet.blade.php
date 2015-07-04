@@ -1,18 +1,12 @@
 @extends('frontend')
 @section('content')
-    <section class="box-banner" id="box-banner" data-set="space-slider" data-fix="header">
-        <h1>
-            <a class="thumb" href="" title="">
-                <img src="images/example/banner-1356x450.jpg" alt="" width="1356" height="450">
-            </a>
-        </h1>
-    </section><!--//box-banner-->
+
     <section data-position="true" class="box-news" id="box-news">
         <div class="fix">
             <div class="layout">
                 <div class="layout-left">
                     <article class="detail" id="data-detail">
-                        <h1 class="title">Thuốc Fugacar</h1>
+                        <h1 class="title">Bệnh còi xương suy dinh</h1>
                         <div class="data">
                             <p style="text-align: center">
                                 <img src="images/example/detail-1.jpg" width="835" height="424" alt=""/>
@@ -75,7 +69,7 @@
                     </div>
                     <div class="boxNotify">
                         <div class="head">
-                            Tìm thuốc theo bệnh
+                            Đại cương về bệnh
                         </div>
                         <div class="content" id="scrollNotify">
                             <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>

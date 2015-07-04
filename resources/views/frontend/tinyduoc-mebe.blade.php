@@ -1,12 +1,6 @@
 @extends('frontend')
 @section('content')
-    <section class="box-banner" id="box-banner" data-set="space-slider" data-fix="header">
-        <h1>
-            <a class="thumb" href="" title="">
-                <img src="images/example/banner-1356x450.jpg" alt="" width="1356" height="450">
-            </a>
-        </h1>
-    </section><!--//box-banner-->
+
     <section data-position="true" class="box-news" id="box-news">
         <div class="fix">
             <div class="layout">

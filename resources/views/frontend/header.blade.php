@@ -6,42 +6,42 @@
         <nav>
             <ul class="nav-main">
                 <li class="current-menu-item">
-                    <a href="index.html" title="">Trang chủ</a>
+                    <a href="{{url('/')}}" title="">Trang chủ</a>
                 </li>
                 <li>
-                    <a href="#" title="">Tuệ Linh</a>
+                    <a href="{{url('/')}}" title="">Tuệ Linh</a>
                     <ul>
                         <li>
-                            <a href="tuelinh-gioithieu.html" title="">Giới thiệu</a>
+                            <a href="{{url('gioithieu')}}" title="">Giới thiệu</a>
                         </li>
                         <li>
-                            <a href="tuelinh-tintuc.html" title="">Tin tức</a>
+                            <a href="{{url('tintuc')}}" title="">Tin tức</a>
                         </li>
                         <li>
-                            <a href="tuelinh-tuthien.html" title="">Hoạt động từ thiện</a>
+                            <a href="{{url('tuthien')}}" title="">Hoạt động từ thiện</a>
                         </li>
                         <li>
-                            <a href="tuelinh-tuyendung.html" title="">Tuyển dụng</a>
+                            <a href="{{url('tuyendung')}}" title="">Tuyển dụng</a>
                         </li>
                         <li class="last">
-                            <a href="tuelinh-thuvien.html" title="">Thư viện</a>
+                            <a href="{{url('thuvien')}}" title="">Thư viện</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="sanpham.html" title="">Sản phẩm</a>
+                    <a href="{{url('sanpham')}}" title="">Sản phẩm</a>
                 </li>
                 <li>
                     <a href="#" title="">Tin y dược</a>
                     <ul>
                         <li>
-                            <a href="tinyduoc-mebe.html" title="">Mẹ &amp; bé</a>
+                            <a href="{{url('tinyduoc-mebe')}}" title="">Mẹ &amp; bé</a>
                         </li>
                         <li>
-                            <a href="tinyduoc-yhoccotruyen.html" title="">Y học cổ truyền</a>
+                            <a href="{{url('tinyduoc-yhoccotruyen')}}" title="">Y học cổ truyền</a>
                         </li>
                         <li>
-                            <a href="tinyduoc-khoedep.html" title="">Khỏe và đẹp</a>
+                            <a href="{{url('tinyduoc-khoedep')}}" title="">Khỏe và đẹp</a>
                         </li>
                     </ul>
                 </li>
@@ -49,21 +49,21 @@
                     <a href="#" title="">Tra cứu</a>
                     <ul>
                         <li>
-                            <a href="tracuu-daicuongvebenh.html" title="">Đại cương về bệnh</a>
+                            <a href="{{url('tracuu-daicuongvebenh')}}" title="">Đại cương về bệnh</a>
                         </li>
                         <li>
-                            <a href="tracuu-danhsach-timthuoctheobenh.html" title="">Tìm thuốc theo bệnh</a>
+                            <a href="{{url('tracuu-danhsach-timthuoctheobenh')}}" title="">Tìm thuốc theo bệnh</a>
                         </li>
                         <li>
-                            <a href="tracuu-thuocnamtribenh.html" title="">Thuốc nam trị bệnh</a>
+                            <a href="{{url('tracuu-thuocnamtribenh')}}" title="">Thuốc nam trị bệnh</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="hethongphanphoi.html" title="">Hệ thống phân phối</a>
+                    <a href="{{url('hethongphanphoi')}}" title="">Hệ thống phân phối</a>
                 </li>
                 <li>
-                    <a href="lienhe.html" title="">Liên hệ</a>
+                    <a href="{{url('lienhe')}}" title="">Liên hệ</a>
                 </li>
             </ul>
         </nav>

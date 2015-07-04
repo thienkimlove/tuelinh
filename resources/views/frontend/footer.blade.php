@@ -1,13 +1,13 @@
 <footer class="footer" id="footer">
     <nav class="menu-footer">
         <ul class="fix">
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Sản phẩm</a></li>
-            <li><a href="#">Tin tức</a></li>
-            <li><a href="#">Tin y dược</a></li>
-            <li><a href="#">Thư viện</a></li>
-            <li><a href="#">Tuyển dụng</a></li>
-            <li><a href="#">Liên hệ</a></li>
+            <li><a href="{{url('/')}}">Trang chủ</a></li>
+            <li><a href="{{url('sanpham')}}">Sản phẩm</a></li>
+            <li><a href="{{url('tintuc')}}">Tin tức</a></li>
+            <li><a href="{{url('tinyduoc-mebe')}}">Tin y dược</a></li>
+            <li><a href="{{url('thuvien')}}">Thư viện</a></li>
+            <li><a href="{{url('tuyendung')}}">Tuyển dụng</a></li>
+            <li><a href="{{url('lienhe')}}">Liên hệ</a></li>
         </ul>
     </nav>
     <div class="fix">

@@ -23,6 +23,15 @@
 <div class="wrapper" id="wrapper">
     <div class="wrapper-in" id="wrapper-in">
         @include('frontend.header')<!--//header-->
+        @if(!empty($page) && $page == 'page-solution')
+            <section class="box-banner" id="box-banner" data-set="space-slider" data-fix="header">
+                <h1>
+                    <a class="thumb" href="" title="">
+                        <img src="images/example/banner-1356x450.jpg" alt="" width="1356" height="450">
+                    </a>
+                </h1>
+            </section><!--//box-banner-->
+        @endif
         @yield('content')
         @include('frontend.footer')<!--//footer-->
     </div><!--//wrapper-in-->
