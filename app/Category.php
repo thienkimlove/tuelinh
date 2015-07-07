@@ -2,18 +2,18 @@
 
 namespace App;
 
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
 use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model implements SluggableInterface
+class Category extends Model
 {
-    use Translatable, SluggableTrait;
+    use Translatable;
+
+    public $timestamps = false;
 
     public $translatedAttributes = ['title'];
 
-    protected $fillable = ['slug', 'image', 'parent_id', 'title'];
+    protected $fillable = ['parent_id', 'title', 'slug'];
 
     /**
      * category have many posts.
@@ -22,5 +22,23 @@ class Category extends Model implements SluggableInterface
     public function posts()
     {
         return $this->hasMany('App\Post')->where('status', true);
+    }
+    /**
+     * parent of this category
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function parent()
+    {
+        return $this->belongsTo('App\Category', 'parent_id', 'id');
+    }
+
+    /**
+     * sub of this category
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function subCategories()
+    {
+        return $this->hasMany('App\Category', 'parent_id', 'id');
+
     }
 }

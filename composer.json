@@ -9,7 +9,6 @@
         "laravel/framework": "5.1.*",
         "laracasts/flash": "*",
         "illuminate/html": "*",
-        "cviebrock/eloquent-sluggable": ">=3.0.0-alpha",
         "barryvdh/laravel-ide-helper": "~2.0",
         "intervention/image": "~2.1",
         "intervention/imagecache": "~2.1",

@@ -139,7 +139,6 @@ return [
         Dimsav\Translatable\TranslatableServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
-        Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         /*

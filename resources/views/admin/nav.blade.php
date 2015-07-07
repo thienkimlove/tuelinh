@@ -37,14 +37,28 @@
 
 
                 <li>
-                    <a><i class="fa fa-files-o fa-fw"></i>Bài viết<span class="fa arrow"></span></a>
+                    <a><i class="fa fa-files-o fa-fw"></i>{{trans('common.post')}}<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
 
                         <li>
-                            <a href="{{url('admin/posts')}}">Danh sách</a>
+                            <a href="{{url('admin/posts')}}">{{trans('common.list')}}</a>
                         </li>
                         <li>
-                            <a href="{{url('admin/posts/create')}}">Thêm bài</a>
+                            <a href="{{url('admin/posts/create')}}">{{trans('common.button_add')}}</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+
+                <li>
+                    <a><i class="fa fa-files-o fa-fw"></i>{{trans('common.category')}}<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+
+                        <li>
+                            <a href="{{url('admin/categories')}}">{{trans('common.list')}}</a>
+                        </li>
+                        <li>
+                            <a href="{{url('admin/categories/create')}}">{{trans('common.button_add')}}</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->

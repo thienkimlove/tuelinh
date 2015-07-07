@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/test', 'MainController@index');
+
 Route::get('/', function () {
     $page = 'homepage';
     return view('frontend.index', compact('page'));
@@ -124,6 +126,8 @@ Route::get('/admin', [
 ]);
 
 Route::resource('admin/settings', 'SettingsController');
+Route::resource('admin/categories', 'CategoriesController');
+Route::resource('admin/posts', 'PostsController');
 
 
 

@@ -10,7 +10,7 @@ return [
     | Contains an array with the applications available locales.
     |
     */
-    'locales' => ['en', 'es'],
+    'locales' => ['vi', 'en', 'fr'],
 
     /*
     |--------------------------------------------------------------------------
@@ -34,7 +34,7 @@ return [
     | set it to false.
     |
     */
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'vi',
 
     /*
     |--------------------------------------------------------------------------

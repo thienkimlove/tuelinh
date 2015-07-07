@@ -2,18 +2,30 @@
 
 namespace App;
 
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
 use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model implements SluggableInterface
+class Post extends Model
 {
-    use Translatable, SluggableTrait;
+    use Translatable;
 
-    public $translatedAttributes = ['title', 'desc', 'content'];
+    public $translatedAttributes = [
+        'title',
+        'desc',
+        'content',
+        'keyword'
+    ];
 
-    protected $fillable = ['category_id', 'slug', 'image', 'status', 'title', 'desc', 'content'];
+    protected $fillable = [
+        'category_id',
+        'image',
+        'status',
+        'content',
+        'desc',
+        'title',
+        'keyword',
+        'image'
+    ];
 
     public function category()
     {
