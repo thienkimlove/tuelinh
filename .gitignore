@@ -3,6 +3,6 @@
 Homestead.yaml
 .env
 /public/files
-/public/images
 /public/uploads
-/public/js/libs/kcfinder/upload
+/public/js/libs/kcfinder/upload/*
+!/public/js/libs/kcfinder/upload/.htaccess
