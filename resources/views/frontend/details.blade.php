@@ -7,9 +7,6 @@
                     <article class="detail" id="data-detail">
                         <h1 class="title">{{$post->title}}</h1>
                         <div class="data">
-                            <p style="text-align: center">
-                                <img src="{{url('cache/large',  \App\ImageReverse::img($post->image))}}" width="835" height="424" alt=""/>
-                            </p>
                             {!! $post->content !!}
                         </div>
                         <div class="box-tags">

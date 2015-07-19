@@ -2,4 +2,7 @@
 /node_modules
 Homestead.yaml
 .env
-
+/public/files
+/public/images
+/public/uploads
+/public/js/libs/kcfinder/upload

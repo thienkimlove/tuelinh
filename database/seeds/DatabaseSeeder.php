@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call(TracuuFaker::class);
+        $this->call(SanphamFaker::class);
+        $this->call(DeliveryFaker::class);
 
         Model::reguard();
     }

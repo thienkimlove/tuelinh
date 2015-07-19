@@ -190,7 +190,7 @@ class PostsController extends BaseController
 
         foreach (['title', 'content', 'desc'] as $field) {
             foreach (['vi', 'en', 'fr'] as $lang) {
-                $post->translate($lang)->$field = !empty($data[$field.'_'.$lang])? $data[$field.'_'.$lang] : '';
+                $post->translateOrNew($lang)->$field = !empty($data[$field.'_'.$lang])? $data[$field.'_'.$lang] : '';
             }
         }
 
