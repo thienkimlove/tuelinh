@@ -27,7 +27,7 @@
             <section class="box-banner" id="box-banner" data-set="space-slider" data-fix="header">
                 <h1>
                     <a class="thumb" href="" title="">
-                        <img src="images/example/banner-1356x450.jpg" alt="" width="1356" height="450">
+                        <img src="{{url('images/example/banner-1356x450.jpg')}}" alt="" width="1356" height="450">
                     </a>
                 </h1>
             </section><!--//box-banner-->

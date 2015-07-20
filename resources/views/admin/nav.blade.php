@@ -65,6 +65,20 @@
                 </li>
 
                 <li>
+                    <a><i class="fa fa-files-o fa-fw"></i>{{trans('common.delivery')}}<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+
+                        <li>
+                            <a href="{{url('admin/deliveries')}}">{{trans('common.list')}}</a>
+                        </li>
+                        <li>
+                            <a href="{{url('admin/deliveries/create')}}">{{trans('common.button_add')}}</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+
+                <li>
                     <a><i class="fa fa-files-o fa-fw"></i>Tùy chọn<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>

@@ -25,7 +25,7 @@
                             @foreach($categories as $cat)
                             <tr>
                                 <td>{{$cat->id}}</td>
-                                <td>{{$cat->title}}</td>
+                                <td><a href="{{url('admin/categories/'. $cat->id)}}">{{$cat->title}}</a></td>
                                 <td>{{ ($cat->parent_id) ? $cat->parent->title : '' }}</td>
                                 <td>
                                     <button id-attr="{{$cat->id}}" class="btn btn-primary btn-sm edit-category" type="button">{{trans('common.button_edit')}}</button>&nbsp;

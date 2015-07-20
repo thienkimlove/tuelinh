@@ -8,6 +8,18 @@
     </div>
     <div class="row">
         <div class="col-lg-8">
+            <div class="panel-heading">
+                <div class="input-group custom-search-form">
+                    {!! Form::open(['method' => 'GET', 'route' =>  ['admin.posts.index'] ]) !!}
+                    <input type="text" value="{{$searchPost}}" name="q" class="form-control" placeholder="Search post..">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                    {!! Form::close() !!}
+                </div>
+            </div>
             <div class="panel panel-default">
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -20,7 +32,7 @@
                                 <th>{{trans('common.post_list_desc_label')}}</th>
                                 <th>{{trans('common.post_list_category_label')}}</th>
                                 <th>{{trans('common.post_list_image_label')}}</th>
-                                <th>{{trans('common.post_list_keyword_label')}}</th>
+
                                 <th>{{trans('common.post_list_status_label')}}</th>
                                 <th>Action</th>
                             </tr>
@@ -32,8 +44,8 @@
                                 <td>{{$post->title}}</td>
                                 <td>{{ str_limit($post->desc, 50) }}</td>
                                 <td>{{ $post->category->title }}</td>
-                                <td><img src="{{url('cache/small/'. $post->image)}}" /></td>
-                                <td>{{ $post->keyword }}</td>
+                                <td><img src="{{url('cache/small/'.  \App\ImageReverse::img($post->image))}}" /></td>
+
                                 <td>{{ $post->status }}</td>
                                 <td>
                                     <button id-attr="{{$post->id}}" class="btn btn-primary btn-sm edit-post" type="button">{{trans('common.button_edit')}}</button>&nbsp;

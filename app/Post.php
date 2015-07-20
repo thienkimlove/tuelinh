@@ -12,8 +12,7 @@ class Post extends Model
     public $translatedAttributes = [
         'title',
         'desc',
-        'content',
-        'keyword'
+        'content'
     ];
 
     protected $fillable = [
@@ -23,12 +22,33 @@ class Post extends Model
         'content',
         'desc',
         'title',
-        'keyword',
         'image'
     ];
 
     public function category()
     {
         return $this->belongsTo('App\Category');
+    }
+    /**
+     * get the tags that associated with given post
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function tags()
+    {
+        return $this->belongsToMany('App\Tag');
+    }
+
+    /**
+     * get the list tags of current post.
+     * @return mixed
+     */
+    public function getTagListAttribute()
+    {
+        return $this->tags->lists('name');
+    }
+
+    public function modules()
+    {
+        return $this->hasMany('App\Module');
     }
 }

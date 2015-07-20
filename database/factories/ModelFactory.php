@@ -19,3 +19,14 @@ $factory->define(App\User::class, function ($faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Delivery::class, function ($faker) {
+
+    return [
+        'city' => $faker->city,
+        'title' => $faker->name,
+        'address' => $faker->wardName,
+        'phone' => $faker->phoneNumber,
+        'area' => $faker->randomElement(array('Miền Bắc', 'Miền Trung', 'Miền Nam'))
+    ];
+});

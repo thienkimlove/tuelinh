@@ -9,39 +9,39 @@
                     <a href="{{url('/')}}" title="">Trang chủ</a>
                 </li>
                 <li>
-                    <a href="{{url('/')}}" title="">Tuệ Linh</a>
+                    <a href="#" title="">Tuệ Linh</a>
                     <ul>
                         <li>
-                            <a href="{{url('gioithieu')}}" title="">Giới thiệu</a>
+                            <a href="{{url('gioi-thieu')}}" title="">Giới thiệu</a>
                         </li>
                         <li>
-                            <a href="{{url('tintuc')}}" title="">Tin tức</a>
+                            <a href="{{url('tin-tuc')}}" title="">Tin tức</a>
                         </li>
                         <li>
-                            <a href="{{url('tuthien')}}" title="">Hoạt động từ thiện</a>
+                            <a href="{{url('tin-tuc/tu-thien')}}" title="">Hoạt động từ thiện</a>
                         </li>
                         <li>
-                            <a href="{{url('tuyendung')}}" title="">Tuyển dụng</a>
+                            <a href="{{url('tin-tuc/tin-tuyen-dung')}}" title="">Tuyển dụng</a>
                         </li>
                         <li class="last">
-                            <a href="{{url('thuvien')}}" title="">Thư viện</a>
+                            <a href="{{url('tin-tuc/thu-vien')}}" title="">Thư viện</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="{{url('sanpham')}}" title="">Sản phẩm</a>
+                    <a href="{{url('san-pham')}}" title="">Sản phẩm</a>
                 </li>
                 <li>
                     <a href="#" title="">Tin y dược</a>
                     <ul>
                         <li>
-                            <a href="{{url('tinyduoc-mebe')}}" title="">Mẹ &amp; bé</a>
+                            <a href="{{url('thong-tin-suc-khoe/me-va-be')}}" title="">Mẹ &amp; bé</a>
                         </li>
                         <li>
-                            <a href="{{url('tinyduoc-yhoccotruyen')}}" title="">Y học cổ truyền</a>
+                            <a href="{{url('thong-tin-suc-khoe/y-hoc-co-truyen')}}" title="">Y học cổ truyền</a>
                         </li>
                         <li>
-                            <a href="{{url('tinyduoc-khoedep')}}" title="">Khỏe và đẹp</a>
+                            <a href="{{url('thong-tin-suc-khoe/khoe-va-dep')}}" title="">Khỏe và đẹp</a>
                         </li>
                     </ul>
                 </li>
@@ -49,22 +49,19 @@
                     <a href="#" title="">Tra cứu</a>
                     <ul>
                         <li>
-                            <a href="{{url('tracuu-daicuongvebenh')}}" title="">Đại cương về bệnh</a>
+                            <a href="{{url('dai-cuong-ve-benh')}}" title="">Đại cương về bệnh</a>
                         </li>
                         <li>
-                            <a href="{{url('tracuu-danhsach-timthuoctheobenh')}}" title="">Tìm thuốc theo bệnh</a>
+                            <a href="{{url('tim-thuoc-theo-benh')}}" title="">Tìm thuốc theo bệnh</a>
                         </li>
                         <li>
-                            <a href="{{url('tracuu-thuocnamtribenh')}}" title="">Thuốc nam trị bệnh</a>
+                            <a href="{{url('thuoc-nam-tri-benh')}}" title="">Thuốc nam trị bệnh</a>
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="{{url('hethongphanphoi')}}" title="">Hệ thống phân phối</a>
-                </li>
-                <li>
-                    <a href="{{url('lienhe')}}" title="">Liên hệ</a>
-                </li>
+                <li><a href="{{url('he-thong-phan-phoi')}}" title="">Hệ thống phân phối</a></li>
+
+                <li><a href="{{url('lien-he')}}" title="">Liên hệ</a></li>
             </ul>
         </nav>
         <div class="search" id="search">

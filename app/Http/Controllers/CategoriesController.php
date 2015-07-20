@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Http\Requests;
 use App\Http\Requests\CategoryRequest;
+use App\Post;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-
+use Illuminate\Http\Request;
 
 class CategoriesController extends BaseController
 {
@@ -68,12 +69,28 @@ class CategoriesController extends BaseController
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
+     * @param Request $request
      * @return Response
      */
-    public function show($id)
+    public function show($id, Request $request)
     {
-        //
+
+        $category = Category::find($id);
+
+        $cateIds = ($category->subCategories->count() > 0)? Category::where('parent_id', $id)->lists('id') : array($id);
+
+        if ($request->input('q')) {
+            $searchPost = urldecode($request->input('q'));
+            $posts = Post::whereHas('translations', function($q) use ($searchPost){
+                $q->where('title', 'LIKE', '%'.$searchPost.'%')
+                    ->where('locale', 'vi');
+            })->whereIn('category_id', $cateIds)->latest()->paginate(10);
+        } else {
+            $posts = Post::whereIn('category_id', $cateIds)->latest()->paginate(10);
+            $searchPost = '';
+        }
+        return view('admin.category.show', compact('posts', 'searchPost', 'category'));
     }
 
     /**

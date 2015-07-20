@@ -49,19 +49,27 @@
                 </div>
             @endforeach
 
-
-            @foreach(['vi', 'en', 'fr'] as $lang)
-                <div class="form-group">
-                    {!! Form::label('keyword_'.$lang, trans('common.post_form_keyword_label_'.$lang)) !!}
-                    {!! Form::text('keyword_'.$lang, $post->translateOrNew($lang)->keyword, ['class' => 'form-control']) !!}
-                </div>
-            @endforeach
-
-
             <div class="form-group">
                 {!! Form::label('category_id', trans('common.post_form_category_label')) !!}
                 {!! Form::select('category_id', $display, null, ['class' => 'form-control']) !!}
             </div>
+
+            <div class="form-group">
+                {!! Form::label('tag_list', trans('common.post_form_tag_label')) !!}
+                {!! Form::select('tag_list[]', $tags, null, ['id' => 'tag_list', 'class' => 'form-control', 'multiple']) !!}
+            </div>
+
+            @foreach ($modules as $key => $module)
+            <div class="form-group">
+
+                {!! Form::label('modules['.$key.']', $module) !!}
+
+                    {!! Form::checkbox('modules['.$key.'][display]', null, $post->modules->contains('slug', $key)) !!}
+
+                    {!! Form::text('modules['.$key.'][order]', ($post->modules->where('slug', $key)->first()) ? $post->modules->where('slug', $key)->first()->order : 0) !!}
+
+            </div>
+            @endforeach
 
             <div class="form-group">
                 {!! Form::label('status', trans('common.post_form_status_label')) !!}
@@ -78,3 +86,11 @@
         </div>
     </div>
 @stop
+@section('footer')
+    <script>
+        $('#tag_list').select2({
+            placeholder : 'Choose a tag',
+            tags : true //allow to add new tag which not in list.
+        });
+    </script>
+@endsection

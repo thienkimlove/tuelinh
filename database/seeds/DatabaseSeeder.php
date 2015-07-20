@@ -2,8 +2,10 @@
 
 use App\Category;
 use App\Post;
+use App\Tag;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,7 +18,7 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $this->call(ImportPosts::class);
+        $this->call(TracuuFaker::class);
 
         Model::reguard();
     }
@@ -59,6 +61,84 @@ class ImportCategories extends Seeder
         DB::statement('ALTER TABLE categories CHANGE  id  id INT( 10 ) UNSIGNED NOT NULL AUTO_INCREMENT ;');
         DB::statement('ALTER TABLE categories AUTO_INCREMENT = '.$maxId.';');
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+    }
+}
+
+class TracuuFaker extends Seeder
+{
+    public function run()
+    {
+        $faker = Faker\Factory::create('vi_VN');
+        for ($i = 0; $i < 60 ; $i ++) {
+            $insert = [
+                'category_id' => $faker->randomElement([1, 3, 43]),
+                'status' => true,
+                'image' => '0ca1f3d3ef0f455ddec7d078693eae00.jpg'
+            ];
+
+            foreach (['vi', 'en', 'fr'] as $lang) {
+                foreach (['title', 'content', 'desc'] as $field) {
+                    $insert[$lang][$field] = $faker->sentence();
+                }
+            }
+             Post::create($insert);
+        }
+    }
+}
+
+class SanphamFaker extends Seeder
+{
+    public function run()
+    {
+        $tagIds = [];
+        foreach (array('Tiêu hóa', 'Xương khớp', 'Trẻ em', 'Thuốc thảo dược') as $tag) {
+            $tagCount = Tag::where('title', $tag)->first();
+            if ($tagCount) {
+                $tagIds[] = $tagCount->id;
+            } else {
+                $slug = Str::slug($tag);
+                $slugCount = Tag::whereRaw("slug RLIKE '^{$slug}(-[0-9]+)?$'")->count();
+                $slug = ($slugCount > 0) ? "{$slug}-{$slugCount}" : $slug;
+                $tagIds[] = Tag::create(['title' => $tag, 'slug' => $slug])->id;
+            }
+        }
+        $faker = Faker\Factory::create('vi_VN');
+        for ($i = 0; $i < 60 ; $i ++) {
+            $insert = [
+                'category_id' => 15,
+                'status' => true,
+                'image' => '0ca1f3d3ef0f455ddec7d078693eae00.jpg'
+            ];
+
+            foreach (['vi', 'en', 'fr'] as $lang) {
+                foreach (['title', 'content', 'desc'] as $field) {
+                    $insert[$lang][$field] = $faker->sentence();
+                }
+            }
+            $post = Post::create($insert);
+            $post->tags()->sync($faker->randomElements($tagIds));
+        }
+
+    }
+}
+
+class DeliveryFaker extends Seeder
+{
+    public function run()
+    {
+        DB::table('deliveries')->truncate();
+        $faker = Faker\Factory::create('vi_VN');
+        for ($i = 0; $i < 40 ; $i ++) {
+            $data = [
+                'city' => $faker->city,
+                'title' => $faker->name,
+                'address' => $faker->wardName,
+                'phone' => $faker->phoneNumber,
+                'area' => $faker->randomElement(array('Miền Bắc', 'Miền Trung', 'Miền Nam'))
+            ];
+            $data['slug'] = Str::slug($data['city']);
+            \App\Delivery::create($data);
+        }
     }
 }
 class ImportPosts extends Seeder
@@ -107,9 +187,6 @@ class ImportPosts extends Seeder
                 ->get();
 
             foreach ($meta as $tag) {
-                if ($tag->meta_key == '_yoast_wpseo_metakeywords') {
-                    $data['keyword'] = $tag->meta_value;
-                }
                 if ($tag->meta_key == '_yoast_wpseo_metadesc') {
                     $data['desc'] = $tag->meta_value;
                 }
@@ -137,9 +214,6 @@ class ImportPosts extends Seeder
 
             $postLoad->translateOrNew('vi')->content = $data['content'];
 
-            if (!empty($data['keyword'])) {
-                $postLoad->translateOrNew('vi')->keyword = $data['keyword'];
-            }
             $postLoad->save();
         }
 

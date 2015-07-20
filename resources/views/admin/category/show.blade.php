@@ -1,17 +1,24 @@
 @extends('admin')
 @section('content')
-    @include('admin.category.heading')
-    <div class="row" data-ng-controller="PostIndex">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">{{trans('common.category')}}</h1>
+        </div>
+
+    </div>
+    <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="input-group custom-search-form">
-                        <input type="text" data-ng-model="postTitle" class="form-control" placeholder="Search post..">
+                        {!! Form::open(['method' => 'GET', 'route' =>  ['admin.categories.show', $category->id] ]) !!}
+                        <input type="text" value="{{$searchPost}}" name="q" class="form-control" placeholder="Search post..">
                                 <span class="input-group-btn">
-                                <button class="btn btn-default" data-ng-click="searchPost($event, {{$category->id}})" type="button">
+                                <button class="btn btn-default" type="submit" type="button">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </span>
+                        {!! Form::close() !!}
                     </div>
                 </div>
                 <!-- /.panel-heading -->
@@ -21,50 +28,40 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Title</th>
-                                <th>Desc</th>
-                                <th>Image</th>
-                                <th>Category</th>
-                                <th>Nổi bật</th>
-                                <th>Cột phải</th>
-                                <th>Published?</th>
+                                <th>{{trans('common.post_list_title_label')}}</th>
+                                <th>{{trans('common.post_list_desc_label')}}</th>
+                                <th>{{trans('common.post_list_category_label')}}</th>
+                                <th>{{trans('common.post_list_image_label')}}</th>
+
+                                <th>{{trans('common.post_list_status_label')}}</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($posts as $post)
-                            <tr>
-                                <td>{{$post->id}}</td>
-                                <td>{{$post->title}}</td>
-                                <td>{{$post->desc}}</td>
-                                <td> <img src="{{url('image-cached/size1/' .$post->image)}}" /> </td>
-                                <td>{{$post->category->name}}</td>
-                                <td>{{($post->hot) ? 'Yes' : 'No'}}</td>
-                                <td>{{($post->right) ? 'Yes' : 'No'}}</td>
-                                <td>{{($post->status) ? 'Yes' : 'No'}}</td>
+                                <tr>
+                                    <td>{{$post->id}}</td>
+                                    <td>{{$post->title}}</td>
+                                    <td>{{ str_limit($post->desc, 50) }}</td>
+                                    <td>{{ $post->category->title }}</td>
+                                    <td><img src="{{url('cache/small/'. \App\ImageReverse::img($post->image))}}" /></td>
 
-                                <td>
-                                    <button class="btn btn-primary btn-sm" data-ng-click="goUrl('/posts/{{$post->id}}/edit')" type="button">Edit</button>&nbsp;
-                                    <br>
-                                    {!! Form::open(['method' => 'DELETE', 'route' => ['admin.posts.destroy', $post->id]]) !!}
-                                    <button type="submit" class="btn btn-danger btn-mini">Delete</button>
-                                    {!! Form::close() !!}
-                                </td>
-                            </tr>
+                                    <td>{{ $post->status }}</td>
+                                    <td>
+                                        <button id-attr="{{$post->id}}" class="btn btn-primary btn-sm edit-post" type="button">{{trans('common.button_edit')}}</button>&nbsp;
+                                        {!! Form::open(['method' => 'DELETE', 'route' => ['admin.posts.destroy', $post->id]]) !!}
+                                        <button type="submit" class="btn btn-danger btn-mini">{{trans('common.button_delete')}}</button>
+                                        {!! Form::close() !!}
+                                    </td>
+                                </tr>
                             @endforeach
                             </tbody>
                         </table>
-
                     </div>
+                    <button class="btn btn-primary add-post" type="button">{{trans('common.button_add')}}</button>
                     <div class="row">
-
                         <div class="col-sm-6">{!!$posts->render()!!}</div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6"><button class="btn btn-primary" type="button" data-ng-click="goUrl('/posts/create')">Add</button></div>
-                    </div>
-
-
                 </div>
                 <!-- /.panel-body -->
             </div>
@@ -72,4 +69,17 @@
         </div>
 
     </div>
+@endsection
+
+@section('footer')
+    <script>
+        $(function(){
+            $('.add-post').click(function(){
+                window.location.href = window.baseUrl + '/admin/posts/create';
+            });
+            $('.edit-post').click(function(){
+                window.location.href = window.baseUrl + '/admin/posts/' + $(this).attr('id-attr') + '/edit';
+            });
+        });
+    </script>
 @endsection
