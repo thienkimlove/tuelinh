@@ -24,7 +24,7 @@
                         </div>
                     </article>
                 </div>
-                @include('frontend.tracuu-right-menu', ['news' => $news, 'list' => $list])
+                @include('frontend.tracuu-right-menu', ['list' => $list])
             </div>
         </div>
         @include('frontend.foot-slide')

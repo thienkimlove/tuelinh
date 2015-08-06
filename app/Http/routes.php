@@ -20,6 +20,11 @@ Route::get('/', function () {
     return view('frontend.index', compact('page'));
 });
 
+Route::get('home', function () {
+    $page = 'homepage';
+    return view('frontend.index', compact('page'));
+});
+
 Route::resource('admin/settings', 'SettingsController');
 Route::resource('admin/categories', 'CategoriesController');
 Route::resource('admin/posts', 'PostsController');
@@ -94,7 +99,7 @@ Route::get('/{value}', function ($value) {
         $post = Post::find($matches[1]);
         $tuelinh = Post::whereHas('category', function($q){
             $q->where('slug', 'tue-linh');
-        })->all();
+        })->get();
 
 
         $relatePosts = Post::where('category_id', $post->category_id)
