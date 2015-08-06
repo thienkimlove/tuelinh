@@ -93,7 +93,7 @@
                         Công ty TUỆ LINH lấy trí TUỆ làm nền tảng, làm động lực phát triển để sản xuất ra các sản phẩm LINH nghiệm.
                     </p>
                     <div class="process wow bounce-in animated">
-                        <a class='youtube' href="http://www.youtube.com/embed/VOJyrQa_WR4?rel=0&amp;wmode=transparent"><img src="images/example/i_video.png" alt=""></a>
+                        <a class='youtube' href="http://www.youtube.com/embed/KZDOmzD7K2c?rel=0&amp;wmode=transparent"><img src="images/example/i_video.png" alt=""></a>
                     </div>
                 </div>
                 <div class="gallery">
