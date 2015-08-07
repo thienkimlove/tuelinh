@@ -6,3 +6,4 @@ Homestead.yaml
 /public/uploads
 /public/js/libs/kcfinder/upload/*
 !/public/js/libs/kcfinder/upload/.htaccess
+/.idea

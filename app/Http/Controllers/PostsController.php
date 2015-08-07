@@ -21,12 +21,12 @@ class PostsController extends BaseController
         'dai-cuong-ve-benh' => 'Hiện thị list  bên phải đại cương về bệnh',
         'thuoc-nam-tri-benh' => 'Hiện thị list  bên phải thuoc nam tri benh',
         'tim-thuoc-theo-benh' => 'Hiện thị list  bên phải tim thuoc theo benh',
-
-
         'footer-san-pham' => 'Hiện thị danh sách tin footer',
-
          'tin-tuc-noi-bat' => 'Hiện thị tin tức noi bat bên phải',
          'tin-tuc-lien-quan' => 'Hiện thị tin tức lien quan bên phải',
+         'chuan-hoa-nguyen-lieu' => 'Hiện thị trong mục Chuẩn Hóa Vùng nguyên liệu trang chủ',
+         'san-pham-trang-chu' => 'Hiện thị trong mục Sản phẩm trang chủ',
+         'tu-thien-trang-chu' => 'Hiện thị trong mục Hoạt động từ thiện trang chủ',
     ];
         $categories = Category::with('translations')->get();
         $this->display = [];

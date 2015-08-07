@@ -4,15 +4,15 @@
 <section class="box-slide" id="box-slide" data-set="space-slider" data-fix="header">
     <div class="owl-carousel" id="slide-home">
         <div class="item">
-            <img src="images/example/banner-1356x658-1.jpg" width="1356" height="658" alt=""/>
+            <img src="{{url('images/example/banner-1356x658-1.jpg')}}" width="1356" height="658" alt=""/>
             <a class="over" href="" title=""></a>
         </div>
         <div class="item">
-            <img src="images/example/banner-1356x658-2.jpg" width="1356" height="658" alt=""/>
+            <img src="{{url('images/example/banner-1356x658-2.jpg')}}" width="1356" height="658" alt=""/>
             <a class="over" href="" title=""></a>
         </div>
         <div class="item">
-            <img src="images/example/banner-1356x658-3.jpg" width="1356" height="658" alt=""/>
+            <img src="{{url('images/example/banner-1356x658-3.jpg')}}" width="1356" height="658" alt=""/>
             <a class="over" href="" title=""></a>
         </div>
     </div>
@@ -24,54 +24,20 @@
         </div>
         <div class="data wow bounce-in-right" data-wow-duration="1s">
             <div class="owl-carousel" id="slide-news">
+                @foreach ($tintuc->homepage->slice(0, 4) as $post)
                 <div class="item wow animated" data-wow-delay="0.6s" data-wow-duration="1s">
-                    <a href="" title="">
-                        <img src="images/example/product-256x256-1.jpg" width="256" height="256" alt=""/>
+                    <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{$post->title}}">
+                        <img src="{{url('cache/256x256',  \App\ImageReverse::img($post->image))}}" width="256" height="256" alt=""/>
                     </a>
-                    <p class="soft-news">Tin công ty</p>
+                    <p class="soft-news">{{$post->category->title}}</p>
                     <h3>
-                        <a href="" title="">CÔNG TY TNHH TUỆ LINH: CHUNG SỨC VÌ CỘNG ĐỒNG, CHUNG TAY ĐẨY LÙI VIÊM GAN VIRUS B</a>
+                        <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="">{{$post->title}}</a>
                     </h3>
                     <h4>
-                        <a href="" title="">Chi tiết</a>
+                        <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{$post->title}}">Chi tiết</a>
                     </h4>
                 </div>
-                <div class="item wow animated" data-wow-delay="0.6s" data-wow-duration="1s">
-                    <a href="" title="">
-                        <img src="images/example/product-256x256-2.jpg" width="256" height="256" alt=""/>
-                    </a>
-                    <p class="soft-news">Tin công ty</p>
-                    <h3>
-                        <a href="" title="">CÔNG TY TNHH TUỆ LINH: CHUNG SỨC VÌ CỘNG ĐỒNG, CHUNG TAY ĐẨY LÙI VIÊM GAN VIRUS B</a>
-                    </h3>
-                    <h4>
-                        <a href="" title="">Chi tiết</a>
-                    </h4>
-                </div>
-                <div class="item wow animated" data-wow-delay="0.6s" data-wow-duration="1s">
-                    <a href="" title="">
-                        <img src="images/example/product-256x256-3.jpg" width="256" height="256" alt=""/>
-                    </a>
-                    <p class="soft-news">Tin công ty</p>
-                    <h3>
-                        <a href="" title="">CÔNG TY TNHH TUỆ LINH: CHUNG SỨC VÌ CỘNG ĐỒNG, CHUNG TAY ĐẨY LÙI VIÊM GAN VIRUS B</a>
-                    </h3>
-                    <h4>
-                        <a href="" title="">Chi tiết</a>
-                    </h4>
-                </div>
-                <div class="item wow animated" data-wow-delay="0.6s" data-wow-duration="1s">
-                    <a href="" title="">
-                        <img src="images/example/product-256x256-4.jpg" width="256" height="256" alt=""/>
-                    </a>
-                    <p class="soft-news">Tin công ty</p>
-                    <h3>
-                        <a href="" title="">CÔNG TY TNHH TUỆ LINH: CHUNG SỨC VÌ CỘNG ĐỒNG, CHUNG TAY ĐẨY LÙI VIÊM GAN VIRUS B</a>
-                    </h3>
-                    <h4>
-                        <a href="" title="">Chi tiết</a>
-                    </h4>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -81,10 +47,10 @@
         <div class="inner">
             <div class="item">
                 <div class="left-img wow zoom-in">
-                    <img src="images/example/left_img.png" alt="" width="393" height="298">
+                    <img src="{{url('images/example/left_img.png')}}" alt="" width="393" height="298">
                 </div>
                 <div class="bottom-img wow zoom-in">
-                    <img src="images/example/bottom_img.png" alt="">
+                    <img src="{{url('images/example/bottom_img.png')}}" alt="">
                 </div>
                 <div class="text">
                     <h2 class="title">Tiếp bước con đường của đại Danh y Tuệ Tĩnh </h2>
@@ -93,11 +59,11 @@
                         Công ty TUỆ LINH lấy trí TUỆ làm nền tảng, làm động lực phát triển để sản xuất ra các sản phẩm LINH nghiệm.
                     </p>
                     <div class="process wow bounce-in animated">
-                        <a class='youtube' href="http://www.youtube.com/embed/KZDOmzD7K2c?rel=0&amp;wmode=transparent"><img src="images/example/i_video.png" alt=""></a>
+                        <a class='youtube' href="http://www.youtube.com/embed/KZDOmzD7K2c?rel=0&amp;wmode=transparent"><img src="{{url('images/example/i_video.png')}}" alt=""></a>
                     </div>
                 </div>
                 <div class="gallery">
-                    <img src="images/example/avatar.png" alt="" width="300" height="550">
+                    <img src="{{url('images/example/avatar.png')}}" alt="" width="300" height="550">
                 </div>
             </div>
         </div>
@@ -109,180 +75,54 @@
             <h3 class="title wow fade-in-left" data-wow-delay="1s" data-wow-duration="1s">CHUẨN HÓA NGUỒN NGUYÊN LIỆU, QUY TRÌNH SẢN XUẤT </h3>
             <p class="des wow fade-in-right">Cho ra đời những sản phẩm chất lượng phục vụ công tác chăm sóc sức khỏe cộng đồng </p>
         </div>
+        @foreach ($forms->chunk(2) as $gPost)
         <div class="data">
+            @foreach ($gPost as $post)
             <div class="item">
-                <a href="#" class="thumb"><img src="images/example/product-500x350-1.jpg" alt="" width="500" height="350"></a>
-                <h3><a href="#">Vùng nguyên liệu sạch</a></h3>
-                <p>
-                    Chuẩn hóa vùng nguyên liệu tập trung có ý nghĩa sống còn với hầu hết các ngành sản xuất, đặc biệt là với ngành dược. Thế nhưng, dường như nhiều doanh nghiệp dược phẩm Việt Nam vẫn còn đang tìm lời giải cho bài toán này…
-                </p>
+                <a href="{{url(str_slug($post->title.' '.$post->id))}}" class="thumb">
+                    <img src="{{url('cache/500x350', \App\ImageReverse::img($post->image))}}" alt="" width="500" height="350"></a>
+                <h3><a href="{{url(str_slug($post->title.' '.$post->id))}}">{{url($post->title)}}</a></h3>
+                <p>{{$post->desc}}</p>
             </div>
-            <div class="item">
-                <a href="#" class="thumb"><img src="images/example/product-500x350-2.png" alt="" width="500" height="350"></a>
-                <h3><a href="#">Vùng nguyên liệu sạch</a></h3>
-                <p>
-                    Chuẩn hóa vùng nguyên liệu tập trung có ý nghĩa sống còn với hầu hết các ngành sản xuất, đặc biệt là với ngành dược. Thế nhưng, dường như nhiều doanh nghiệp dược phẩm Việt Nam vẫn còn đang tìm lời giải cho bài toán này…
-                </p>
-            </div>
+            @endforeach
         </div>
-        <div class="data">
-            <div class="item">
-                <a href="#" class="thumb"><img src="images/example/product-500x350-3.png" alt="" width="500" height="350"></a>
-                <h3><a href="#">Vùng nguyên liệu sạch</a></h3>
-                <p>
-                    Chuẩn hóa vùng nguyên liệu tập trung có ý nghĩa sống còn với hầu hết các ngành sản xuất, đặc biệt là với ngành dược. Thế nhưng, dường như nhiều doanh nghiệp dược phẩm Việt Nam vẫn còn đang tìm lời giải cho bài toán này…
-                </p>
-            </div>
-            <div class="item">
-                <a href="#" class="thumb"><img src="images/example/product-500x350-4.png" alt="" width="500" height="350"></a>
-                <h3><a href="#">Vùng nguyên liệu sạch</a></h3>
-                <p>
-                    Chuẩn hóa vùng nguyên liệu tập trung có ý nghĩa sống còn với hầu hết các ngành sản xuất, đặc biệt là với ngành dược. Thế nhưng, dường như nhiều doanh nghiệp dược phẩm Việt Nam vẫn còn đang tìm lời giải cho bài toán này…
-                </p>
-            </div>
-        </div>
+        @endforeach
     </div>
 </section><!--//box-resources-->
 <section class="box-product">
     <div class="left-img">
-        <img src="images/example/left01.png" alt="">
+        <img src="{{url('images/example/left01.png')}}" alt="">
     </div>
     <div class="fix">
         <div class="head">
             <h3 class="title wow fade-in-left" data-wow-delay="1s" data-wow-duration="1s">Sản phẩm tuệ linh</h3>
             <p class="des wow fade-in-right">Cho ra đời những sản phẩm chất lượng phục vụ công tác chăm sóc sức khỏe cộng đồng </p>
         </div>
+        @foreach ($products->chunk(4) as $gPost)
         <div class="data">
+            @foreach ($gPost as $post)
             <div class="item wow rotate-left" data-wow-delay="0.6s" data-wow-duration="1s">
                 <div class="item-bg">
-                    <a href="" title="">
-                        <img src="images/example/product-256x256-5.png" width="256" height="256" alt=""/>
+                    <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{$post->title}}">
+                        <img src="{{url('cache/256x256',  \App\ImageReverse::img($post->image))}}" width="256" height="256" alt=""/>
                     </a>
                 </div>
                 <div class="des">
                     <h3>
-                        <a href="" title="">Hộp bổ mắt lycoeye</a>
+                        <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{$post->title}}">{{$post->title}}</a>
                     </h3>
                     <h4>
-                        <a href="" title="">Dầu cá  dầu gấc nguyên chất</a>
+                        <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{$post->title}}">
+                            {{$post->desc}}
+                        </a>
                     </h4>
                 </div>
             </div>
-            <div class="item wow rotate-left" data-wow-delay="0.6s" data-wow-duration="1s">
-                <div class="item-bg">
-                    <a href="" title="">
-                        <img src="images/example/product-256x256-5.png" width="256" height="256" alt=""/>
-                    </a>
-                </div>
-                <div class="des">
-                    <h3>
-                        <a href="" title="">Hộp bổ mắt lycoeye</a>
-                    </h3>
-                    <h4>
-                        <a href="" title="">Dầu cá  dầu gấc nguyên chất</a>
-                    </h4>
-                </div>
-            </div>
-            <div class="item wow rotate-left" data-wow-delay="0.6s" data-wow-duration="1s">
-                <div class="item-bg">
-                    <a href="" title="">
-                        <img src="images/example/product-256x256-5.png" width="256" height="256" alt=""/>
-                    </a>
-                </div>
-                <div class="des">
-                    <h3>
-                        <a href="" title="">Hộp bổ mắt lycoeye</a>
-                    </h3>
-                    <h4>
-                        <a href="" title="">Dầu cá  dầu gấc nguyên chất</a>
-                    </h4>
-                </div>
-            </div>
-            <div class="item wow rotate-left" data-wow-delay="0.6s" data-wow-duration="1s">
-                <div class="item-bg">
-                    <a href="" title="">
-                        <img src="images/example/product-256x256-5.png" width="256" height="256" alt=""/>
-                    </a>
-                </div>
-                <div class="des">
-                    <h3>
-                        <a href="" title="">Hộp bổ mắt lycoeye</a>
-                    </h3>
-                    <h4>
-                        <a href="" title="">Dầu cá  dầu gấc nguyên chất</a>
-                    </h4>
-                </div>
-            </div>
+            @endforeach
         </div>
-        <div class="data">
-            <div class="item wow rotate-left" data-wow-delay="0.6s" data-wow-duration="1s">
-                <div class="item-bg">
-                    <a href="" title="">
-                        <img src="images/example/product-256x256-5.png" width="256" height="256" alt=""/>
-                    </a>
-                </div>
-                <div class="des">
-                    <h3>
-                        <a href="" title="">Hộp bổ mắt lycoeye</a>
-                    </h3>
-                    <h4>
-                        <a href="" title="">Dầu cá  dầu gấc nguyên chất</a>
-                    </h4>
-                </div>
-            </div>
-            <div class="item wow rotate-left" data-wow-delay="0.6s" data-wow-duration="1s">
-                <div class="item-bg">
-                    <a href="" title="">
-                        <img src="images/example/product-256x256-5.png" width="256" height="256" alt=""/>
-                    </a>
-                </div>
-                <div class="des">
-                    <h3>
-                        <a href="" title="">Hộp bổ mắt lycoeye</a>
-                    </h3>
-                    <h4>
-                        <a href="" title="">Dầu cá  dầu gấc nguyên chất</a>
-                    </h4>
-                </div>
-            </div>
-            <div class="item wow rotate-left" data-wow-delay="0.6s" data-wow-duration="1s">
-                <div class="item-bg">
-                    <a href="" title="">
-                        <img src="images/example/product-256x256-5.png" width="256" height="256" alt=""/>
-                    </a>
-                </div>
-                <div class="des">
-                    <h3>
-                        <a href="" title="">Hộp bổ mắt lycoeye</a>
-                    </h3>
-                    <h4>
-                        <a href="" title="">Dầu cá  dầu gấc nguyên chất</a>
-                    </h4>
-                </div>
-            </div>
-            <div class="item wow rotate-left" data-wow-delay="0.6s" data-wow-duration="1s">
-                <div class="item-bg">
-                    <a href="" title="">
-                        <img src="images/example/product-256x256-5.png" width="256" height="256" alt=""/>
-                    </a>
-                </div>
-                <div class="des">
-                    <h3>
-                        <a href="" title="">Hộp bổ mắt lycoeye</a>
-                    </h3>
-                    <h4>
-                        <a href="" title="">Dầu cá  dầu gấc nguyên chất</a>
-                    </h4>
-                </div>
-            </div>
-        </div>
+        @endforeach
         <div class="box-paging">
-            <ul class="nav-paging">
-                <li><a href="" class="current">1</a></li>
-                <li><a href="">2</a></li>
-                <li><a href="">3</a></li>
-                <li><a href="">4</a></li>
-            </ul>
+            {!! with(new \App\Pagination\AcmesPresenter($products))->render() !!}
         </div>
     </div>
 </section><!--//box-product-->
@@ -294,54 +134,20 @@
         </div>
         <div class="data wow bounce-in-right" data-wow-duration="1s">
             <div class="owl-carousel" id="slide-activity">
+                @foreach ($charities as $post)
                 <div class="item wow animated" data-wow-delay="0.6s" data-wow-duration="1s">
-                    <a href="" title="">
-                        <img src="images/example/product-256x256-1.jpg" width="256" height="190" alt=""/>
+                    <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{$post->title}}">
+                        <img src="{{url('cache/500x350', \App\ImageReverse::img($post->image))}}" width="256" height="190" alt=""/>
                     </a>
                     <p class="soft-news">Tin công ty</p>
                     <h3>
-                        <a href="" title="">CÔNG TY TNHH TUỆ LINH: CHUNG SỨC VÌ CỘNG ĐỒNG, CHUNG TAY ĐẨY LÙI VIÊM GAN VIRUS B</a>
+                        <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{$post->title}}">{{$post->title}}</a>
                     </h3>
                     <h4>
-                        <a href="" title="">Chi tiết</a>
+                        <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{$post->title}}">Chi tiết</a>
                     </h4>
                 </div>
-                <div class="item wow animated" data-wow-delay="0.6s" data-wow-duration="1s">
-                    <a href="" title="">
-                        <img src="images/example/product-256x256-2.jpg" width="256" height="190" alt=""/>
-                    </a>
-                    <p class="soft-news">Tin công ty</p>
-                    <h3>
-                        <a href="" title="">CÔNG TY TNHH TUỆ LINH: CHUNG SỨC VÌ CỘNG ĐỒNG, CHUNG TAY ĐẨY LÙI VIÊM GAN VIRUS B</a>
-                    </h3>
-                    <h4>
-                        <a href="" title="">Chi tiết</a>
-                    </h4>
-                </div>
-                <div class="item wow animated" data-wow-delay="0.6s" data-wow-duration="1s">
-                    <a href="" title="">
-                        <img src="images/example/product-256x256-3.jpg" width="256" height="190" alt=""/>
-                    </a>
-                    <p class="soft-news">Tin công ty</p>
-                    <h3>
-                        <a href="" title="">CÔNG TY TNHH TUỆ LINH: CHUNG SỨC VÌ CỘNG ĐỒNG, CHUNG TAY ĐẨY LÙI VIÊM GAN VIRUS B</a>
-                    </h3>
-                    <h4>
-                        <a href="" title="">Chi tiết</a>
-                    </h4>
-                </div>
-                <div class="item wow animated" data-wow-delay="0.6s" data-wow-duration="1s">
-                    <a href="" title="">
-                        <img src="images/example/product-256x256-4.jpg" width="256" height="190" alt=""/>
-                    </a>
-                    <p class="soft-news">Tin công ty</p>
-                    <h3>
-                        <a href="" title="">CÔNG TY TNHH TUỆ LINH: CHUNG SỨC VÌ CỘNG ĐỒNG, CHUNG TAY ĐẨY LÙI VIÊM GAN VIRUS B</a>
-                    </h3>
-                    <h4>
-                        <a href="" title="">Chi tiết</a>
-                    </h4>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -354,39 +160,19 @@
         </div>
         <div class="data">
             <div class="owl-carousel" id="slide-group">
+                @foreach ($friends as $friend)
                 <div class="item wow bounce-in" data-wow-delay="0.6s" data-wow-duration="1s">
-                    <a href="" title="">
-                        <img src="images/example/ava01-256x256.jpg" width="256" height="256" alt=""/>
+                    <a href="#" title="">
+                        <img src="{{url('cache/256x256',  \App\ImageReverse::img($friend->image))}}" width="256" height="256" alt=""/>
                     </a>
                     <h3>
-                        <a href="" title="">Đỗ hồng quân</a>
+                        <a href="#" title="">{{$friend->title}}</a>
                     </h3>
                     <h4>
-                        <a href="" title="">Dầu gấc nếp nguyên chất</a>
+                        <a href="#" title="">{{$friend->desc}}</a>
                     </h4>
                 </div>
-                <div class="item wow bounce-in" data-wow-delay="0.9s" data-wow-duration="1s">
-                    <a href="" title="">
-                        <img src="images/example/ava02-256x256.jpg" width="256" height="256" alt=""/>
-                    </a>
-                    <h3>
-                        <a href="" title="">Đỗ hồng quân</a>
-                    </h3>
-                    <h4>
-                        <a href="" title="">Dầu gấc nếp nguyên chất</a>
-                    </h4>
-                </div>
-                <div class="item wow bounce-in" data-wow-delay="1.2s" data-wow-duration="1s">
-                    <a href="" title="">
-                        <img src="images/example/ava03-256x256.jpg" width="256" height="256" alt=""/>
-                    </a>
-                    <h3>
-                        <a href="" title="">Đỗ hồng quân</a>
-                    </h3>
-                    <h4>
-                        <a href="" title="">Dầu gấc nếp nguyên chất</a>
-                    </h4>
-                </div>
+               @endforeach
             </div>
         </div>
     </div>

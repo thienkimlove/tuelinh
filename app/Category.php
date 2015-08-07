@@ -41,4 +41,13 @@ class Category extends Model
         return $this->hasMany('App\Category', 'parent_id', 'id');
 
     }
+    public function getHomepageAttribute()
+    {
+        return $this->posts()->latest('updated_at')->limit(8)->get();
+    }
+
+    public function getPaginateAttribute()
+    {
+        return $this->posts()->latest('updated_at')->paginate(8);
+    }
 }

@@ -31,7 +31,8 @@ return array(
     */
     
     'paths' => array(
-        public_path('files/images')
+        public_path('files/images'),
+        public_path('files/tuelinh')
     ),
 
     /*
@@ -54,6 +55,12 @@ return array(
         'small' => 'Intervention\Image\Templates\Small',
         'medium' => 'Intervention\Image\Templates\Medium',
         'large' => 'Intervention\Image\Templates\Large',
+        '500x350' => function($image) {
+            return $image->fit(500, 350);
+        },
+        '256x256' => function($image) {
+            return $image->fit(256, 256);
+        },
     ),
 
     /*

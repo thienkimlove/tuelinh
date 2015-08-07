@@ -6,6 +6,7 @@ use App\Tag;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,13 +19,15 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $this->call(TracuuFaker::class);
-        $this->call(SanphamFaker::class);
-        $this->call(DeliveryFaker::class);
+        //$this->call(TracuuFaker::class);
+        //$this->call(SanphamFaker::class);
+        //$this->call(DeliveryFaker::class);
+        $this->call(updateImages::class);
 
         Model::reguard();
     }
 }
+
 class UserTableSeeder extends Seeder
 {
     public function run()
@@ -32,6 +35,7 @@ class UserTableSeeder extends Seeder
         factory('App\User', 1)->create();
     }
 }
+
 class ImportCategories extends Seeder
 {
     public function run()
@@ -59,9 +63,8 @@ class ImportCategories extends Seeder
         }
 
 
-
         DB::statement('ALTER TABLE categories CHANGE  id  id INT( 10 ) UNSIGNED NOT NULL AUTO_INCREMENT ;');
-        DB::statement('ALTER TABLE categories AUTO_INCREMENT = '.$maxId.';');
+        DB::statement('ALTER TABLE categories AUTO_INCREMENT = ' . $maxId . ';');
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }
@@ -71,7 +74,7 @@ class TracuuFaker extends Seeder
     public function run()
     {
         $faker = Faker\Factory::create('vi_VN');
-        for ($i = 0; $i < 60 ; $i ++) {
+        for ($i = 0; $i < 60; $i++) {
             $insert = [
                 'category_id' => $faker->randomElement([1, 3, 43]),
                 'status' => true,
@@ -83,7 +86,7 @@ class TracuuFaker extends Seeder
                     $insert[$lang][$field] = $faker->sentence();
                 }
             }
-             Post::create($insert);
+            Post::create($insert);
         }
     }
 }
@@ -105,7 +108,7 @@ class SanphamFaker extends Seeder
             }
         }
         $faker = Faker\Factory::create('vi_VN');
-        for ($i = 0; $i < 60 ; $i ++) {
+        for ($i = 0; $i < 60; $i++) {
             $insert = [
                 'category_id' => 15,
                 'status' => true,
@@ -130,7 +133,7 @@ class DeliveryFaker extends Seeder
     {
         DB::table('deliveries')->truncate();
         $faker = Faker\Factory::create('vi_VN');
-        for ($i = 0; $i < 40 ; $i ++) {
+        for ($i = 0; $i < 40; $i++) {
             $data = [
                 'city' => $faker->city,
                 'title' => $faker->name,
@@ -143,6 +146,36 @@ class DeliveryFaker extends Seeder
         }
     }
 }
+
+class updateImages extends Seeder
+{
+    /**
+     *
+     */
+    public function run()
+    {
+        $posts = Post::all();
+        foreach ($posts as $post) {
+
+            $avatar = DB::connection('mysql2')
+                ->table('tu81_posts')
+                ->where('post_type', 'attachment')
+                ->where('post_parent', $post->id)
+                ->first();
+
+            $image = !empty($avatar) ? $avatar->guid : '';
+            if ($image) {
+                $filename = md5(time()) . '.' . pathinfo(parse_url($image)['path'], PATHINFO_EXTENSION);
+                if (file_exists(str_replace('http://tuelinh.vn/', '/var/www/html/', $image))) {
+                    copy($image, public_path('files/tuelinh/' . $filename));
+                    $post->image = $image;
+                    $post->save();
+                }
+            }
+        }
+    }
+}
+
 class ImportPosts extends Seeder
 {
     public function run()
@@ -157,10 +190,10 @@ class ImportPosts extends Seeder
 
         DB::connection('mysql2')->enableQueryLog();
         $posts = DB::connection('mysql2')
-                      ->table('tu81_posts')
-                      ->where('post_type', 'post')
-                      ->where('post_status', 'publish')
-                      ->get();
+            ->table('tu81_posts')
+            ->where('post_type', 'post')
+            ->where('post_status', 'publish')
+            ->get();
         foreach ($posts as $post) {
 
             if ($maxId < $post->ID) {
@@ -179,9 +212,7 @@ class ImportPosts extends Seeder
                 ->where('post_parent', $post->ID)
                 ->first();
 
-            if (!empty($avatar)) {
-                $data['image'] = $avatar->guid;
-            }
+            $data['image'] = !empty($avatar) ? $avatar->guid : $post->ID;
 
             $meta = DB::connection('mysql2')
                 ->table('tu81_postmeta')
@@ -195,17 +226,16 @@ class ImportPosts extends Seeder
             }
 
             $terms = DB::connection('mysql2')->table('tu81_term_relationships')
-                                             ->join('tu81_term_taxonomy',  'tu81_term_relationships.term_taxonomy_id', '=', 'tu81_term_taxonomy.term_taxonomy_id')
-                                             ->select('tu81_term_taxonomy.*')
-                                             ->where('tu81_term_relationships.object_id', $post->ID)
-                                             ->where('tu81_term_taxonomy.taxonomy', 'category')->first();
+                ->join('tu81_term_taxonomy', 'tu81_term_relationships.term_taxonomy_id', '=', 'tu81_term_taxonomy.term_taxonomy_id')
+                ->select('tu81_term_taxonomy.*')
+                ->where('tu81_term_relationships.object_id', $post->ID)
+                ->where('tu81_term_taxonomy.taxonomy', 'category')->first();
             if ($terms) {
                 $data['category_id'] = $terms->term_id;
             }
 
 
-
-            DB::insert('insert into posts (id, category_id, status) values (?, ?, ?)', [$data['id'], $data['category_id'], true]);
+            DB::insert('insert into posts (id, category_id, image, status) values (?, ?, ?, ?)', [$data['id'], $data['category_id'], $data['image'], true]);
 
             $postLoad = Post::find($data['id']);
 
@@ -221,7 +251,7 @@ class ImportPosts extends Seeder
 
         DB::statement('ALTER TABLE posts CHANGE  id  id INT( 10 ) UNSIGNED NOT NULL AUTO_INCREMENT ;');
 
-        DB::statement('ALTER TABLE posts AUTO_INCREMENT = '.$maxId.';');
+        DB::statement('ALTER TABLE posts AUTO_INCREMENT = ' . $maxId . ';');
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

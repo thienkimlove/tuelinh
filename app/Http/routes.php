@@ -17,7 +17,27 @@ use Illuminate\Support\Str;
 
 Route::get('/', function () {
     $page = 'homepage';
-    return view('frontend.index', compact('page'));
+
+
+    $tintuc = \App\Category::where('slug', 'tin-tuc')->first();
+
+    $charities = Post::where('status', true)->whereHas('modules', function($q){
+        $q->where('slug', 'tu-thien-trang-chu')->orderBy('order');
+    })->limit(4)->get();
+
+    $friends = \App\Friend::limit(4)->get();
+
+
+    $products = Post::where('status', true)->whereHas('modules', function($q){
+        $q->where('slug', 'san-pham-trang-chu')->orderBy('order');
+    })->paginate(8);
+
+    $forms = Post::where('status', true)->whereHas('modules', function($q){
+        $q->where('slug', 'chuan-hoa-nguyen-lieu')->orderBy('order');
+    })->limit(4)->get();
+
+
+    return view('frontend.index', compact('page', 'tintuc', 'products', 'forms', 'charities', 'friends'));
 });
 
 Route::get('home', function () {
@@ -29,6 +49,7 @@ Route::resource('admin/settings', 'SettingsController');
 Route::resource('admin/categories', 'CategoriesController');
 Route::resource('admin/posts', 'PostsController');
 Route::resource('admin/deliveries', 'DeliveriesController');
+Route::resource('admin/friends', 'FriendsController');
 
 
 Route::get('/admin', [
