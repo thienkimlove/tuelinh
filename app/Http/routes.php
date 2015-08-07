@@ -40,7 +40,7 @@ Route::get('/', function () {
     })->limit(4)->get();
 
 
-    return view('frontend.index', compact('page', 'news', 'products', 'forms', 'charities', 'friends'));
+    return view('frontend.index', compact('page', 'news', 'products', 'forms', 'charities', 'friends'))->with('meta_title', 'Trang chủ | Tuệ Linh');
 });
 
 Route::get('home', function () {
@@ -69,7 +69,7 @@ Route::controllers([
 Route::get('he-thong-phan-phoi/{value}', function($value){
     $page = 'page-solution';
     $deliveries = \App\Delivery::where('slug', $value)->get();
-    return view('frontend.hethongphanphoi-chitiet', compact('page', 'deliveries'));
+    return view('frontend.hethongphanphoi-chitiet', compact('page', 'deliveries'))->with('meta_title', 'Hệ thống phân phối | Tuệ Linh');
 });
 
 Route::get('tag/{value}', function($value){
@@ -78,7 +78,7 @@ Route::get('tag/{value}', function($value){
     $posts = Post::whereHas('tags', function($q) use($tag){
         $q->where('id', $tag->id);
     })->paginate(9);
-    return view('frontend.tag', compact('page', 'tag', 'posts'));
+    return view('frontend.tag', compact('page', 'tag', 'posts'))->with('meta_title', 'Từ khóa | Tuệ Linh');
 });
 
 Route::get('/{value}', function ($value) {
@@ -92,7 +92,7 @@ Route::get('/{value}', function ($value) {
             ->latest('updated_at')
             ->paginate(16);
 
-        return view('frontend.tin-tuc', compact('page', 'posts'));
+        return view('frontend.tin-tuc', compact('page', 'posts'))->with('meta_title', 'Liên hệ | Tuệ Linh');
 
     } elseif ($value == 'he-thong-phan-phoi') {
         $deliveries = \App\Delivery::all();
@@ -116,7 +116,7 @@ Route::get('/{value}', function ($value) {
                 $cities[] = $delivery->city;
             }
         }
-        return view('frontend.he-thong-phan-phoi', compact('page', 'area', 'cities'));
+        return view('frontend.he-thong-phan-phoi', compact('page', 'area', 'cities'))->with('meta_title', 'Hệ thống phân phối | Tuệ Linh');
 
     }  elseif (preg_match('/[a-z0-9\-]+-(\d+)/', $value, $matches)) {
         //posts
@@ -134,7 +134,7 @@ Route::get('/{value}', function ($value) {
 
         $currentTuelinh = null;
 
-        return view('frontend.details', compact('page', 'post', 'relatePosts', 'tuelinh', 'currentTuelinh'));
+        return view('frontend.details', compact('page', 'post', 'relatePosts', 'tuelinh', 'currentTuelinh'))->with('meta_title', $post->title.' | Tuệ Linh');
     }  else {
         if (in_array($value, ['dai-cuong-ve-benh', 'thuoc-nam-tri-benh', 'tim-thuoc-theo-benh', 'san-pham'])) {
             //parent_categories.
@@ -146,7 +146,7 @@ Route::get('/{value}', function ($value) {
                 $tags = \App\Tag::whereHas('posts', function($q) use ($category) {
                     $q->where('category_id', $category->id);
                 })->get();
-                return view('frontend.san-pham', compact('page', 'category', 'posts', 'tags'));
+                return view('frontend.san-pham', compact('page', 'category', 'posts', 'tags'))->with('meta_title', 'Sản phẩm | Tuệ Linh');
 
             } elseif (in_array($category->slug, ['dai-cuong-ve-benh', 'thuoc-nam-tri-benh', 'tim-thuoc-theo-benh'])) {
                 $posts = Post::where('category_id', $category->id)
@@ -157,7 +157,7 @@ Route::get('/{value}', function ($value) {
                     $q->where('slug', $category->slug)->orderBy('order');
                 })->get();
 
-                return view('frontend.tra-cuu', compact('page', 'category', 'posts', 'list'));
+                return view('frontend.tra-cuu', compact('page', 'category', 'posts', 'list'))->with('meta_title', 'Tra cứu | Tuệ Linh');
 
             }
         } else {
@@ -179,7 +179,7 @@ Route::get('/{value}', function ($value) {
                 ->get();
 
             $currentTuelinh = $value;
-            return view('frontend.details', compact('page', 'post', 'relatePosts', 'tuelinh', 'currentTuelinh'));
+            return view('frontend.details', compact('page', 'post', 'relatePosts', 'tuelinh', 'currentTuelinh'))->with('meta_title', 'Giới thiệu | Tuệ Linh');
         }
 
     }
@@ -192,13 +192,13 @@ Route::get('{value1}/{value2}', function($value1, $value2) {
         $posts = Post::where('category_id', $category->id)
             ->latest('updated_at')
             ->paginate(16);
-        return view('frontend.tin-y-duoc', compact('page', 'category', 'posts'));
+        return view('frontend.tin-y-duoc', compact('page', 'category', 'posts'))->with('meta_title', 'Tin y dược | Tuệ Linh');
 
     } elseif (in_array($category->slug, ['tu-thien', 'tin-tuyen-dung', 'thu-vien'])) {
         $posts = Post::where('category_id', $category->id)
             ->latest('updated_at')
             ->paginate(16);
-        return view('frontend.tin-tuc', compact('page', 'posts', 'category'));
+        return view('frontend.tin-tuc', compact('page', 'posts', 'category'))->with('meta_title', 'Tin tức | Tuệ Linh');
     }
 });
 

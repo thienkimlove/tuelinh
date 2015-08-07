@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <link href="https://plus.google.com/107515763736347546999" rel="publisher"/>
     <link rel="stylesheet" href="{{url('css/frontend.css')}}" type="text/css"/>
-    <title>Homepage | Tuệ Linh</title>
+    <title>{{(!empty($meta_title)) ? $meta_title : 'Homepage | Tuệ Linh'}}</title>
 
 
     <!--[if lte IE 8]>
