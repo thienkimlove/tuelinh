@@ -19,7 +19,10 @@ Route::get('/', function () {
     $page = 'homepage';
 
 
-    $tintuc = \App\Category::where('slug', 'tin-tuc')->first();
+    $news = Post::where('category_id', 8)
+        ->latest('updated_at')
+        ->limit(8)
+        ->get();
 
     $charities = Post::where('status', true)->whereHas('modules', function($q){
         $q->where('slug', 'tu-thien-trang-chu')->orderBy('order');
@@ -37,7 +40,7 @@ Route::get('/', function () {
     })->limit(4)->get();
 
 
-    return view('frontend.index', compact('page', 'tintuc', 'products', 'forms', 'charities', 'friends'));
+    return view('frontend.index', compact('page', 'news', 'products', 'forms', 'charities', 'friends'));
 });
 
 Route::get('home', function () {

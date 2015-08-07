@@ -24,7 +24,7 @@
         </div>
         <div class="data wow bounce-in-right" data-wow-duration="1s">
             <div class="owl-carousel" id="slide-news">
-                @foreach ($tintuc->homepage->slice(0, 4) as $post)
+                @foreach ($news as $post)
                 <div class="item wow animated" data-wow-delay="0.6s" data-wow-duration="1s">
                     <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{$post->title}}">
                         <img src="{{url('cache/256x256',  \App\ImageReverse::img($post->image))}}" width="256" height="256" alt=""/>
