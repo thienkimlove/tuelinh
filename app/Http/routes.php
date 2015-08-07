@@ -84,7 +84,7 @@ Route::get('tag/{value}', function($value){
 Route::get('/{value}', function ($value) {
     $page = 'page-solution';
     if ($value == 'lien-he') {
-        return view('frontend.lien-he', compact('page'));
+        return view('frontend.lien-he', compact('page'))->with('meta_title', 'Liên hệ | Tuệ Linh');
     } elseif ($value == 'tin-tuc') {
         $category = \App\Category::where('slug', 'tin-tuc')->first();
 
@@ -92,7 +92,7 @@ Route::get('/{value}', function ($value) {
             ->latest('updated_at')
             ->paginate(16);
 
-        return view('frontend.tin-tuc', compact('page', 'posts'))->with('meta_title', 'Liên hệ | Tuệ Linh');
+        return view('frontend.tin-tuc', compact('page', 'posts'))->with('meta_title', 'Tin tức | Tuệ Linh');
 
     } elseif ($value == 'he-thong-phan-phoi') {
         $deliveries = \App\Delivery::all();

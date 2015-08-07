@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="124f937c-b277-47f7-a9d8-c5f97b71bfd6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
     </list>
     <ignored path="tuelinh.iws" />
@@ -106,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.4385382">
-              <caret line="181" column="31" selection-start-line="181" selection-start-column="31" selection-end-line="181" selection-end-column="31" />
+              <caret line="86" column="85" selection-start-line="86" selection-start-column="85" selection-end-line="86" selection-end-column="85" />
               <folding>
                 <element signature="e#454#1315#1#PHP" expanded="true" />
                 <element signature="e#670#756#1#PHP" expanded="true" />
@@ -116,11 +115,11 @@
                 <element signature="e#1975#2223#1#PHP" expanded="true" />
                 <element signature="e#2253#2578#1#PHP" expanded="true" />
                 <element signature="e#2389#2453#1#PHP" expanded="true" />
-                <element signature="e#4456#4522#1#PHP" expanded="true" />
-                <element signature="e#5384#5493#1#PHP" expanded="true" />
-                <element signature="e#5952#6073#1#PHP" expanded="true" />
-                <element signature="e#6337#6411#1#PHP" expanded="true" />
-                <element signature="e#7055#7849#1#PHP" expanded="true" />
+                <element signature="e#4498#4564#1#PHP" expanded="true" />
+                <element signature="e#5426#5535#1#PHP" expanded="true" />
+                <element signature="e#5994#6115#1#PHP" expanded="true" />
+                <element signature="e#6379#6453#1#PHP" expanded="true" />
+                <element signature="e#7097#7891#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1224,7 +1223,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4385382">
-          <caret line="181" column="31" selection-start-line="181" selection-start-column="31" selection-end-line="181" selection-end-column="31" />
+          <caret line="86" column="85" selection-start-line="86" selection-start-column="85" selection-end-line="86" selection-end-column="85" />
           <folding>
             <element signature="e#454#1315#1#PHP" expanded="true" />
             <element signature="e#670#756#1#PHP" expanded="true" />
@@ -1234,11 +1233,11 @@
             <element signature="e#1975#2223#1#PHP" expanded="true" />
             <element signature="e#2253#2578#1#PHP" expanded="true" />
             <element signature="e#2389#2453#1#PHP" expanded="true" />
-            <element signature="e#4456#4522#1#PHP" expanded="true" />
-            <element signature="e#5384#5493#1#PHP" expanded="true" />
-            <element signature="e#5952#6073#1#PHP" expanded="true" />
-            <element signature="e#6337#6411#1#PHP" expanded="true" />
-            <element signature="e#7055#7849#1#PHP" expanded="true" />
+            <element signature="e#4498#4564#1#PHP" expanded="true" />
+            <element signature="e#5426#5535#1#PHP" expanded="true" />
+            <element signature="e#5994#6115#1#PHP" expanded="true" />
+            <element signature="e#6379#6453#1#PHP" expanded="true" />
+            <element signature="e#7097#7891#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
