@@ -179,45 +179,17 @@
 </section>
 <section class="box-slideF">
     <div class="fix">
-        <h3 class="title wow fade-in-left"><img src="images/example/header.png" alt="Header" width="643" height="68"></h3>
+        <h3 class="title wow fade-in-left"><img src="{{url('images/example/header.png')}}" alt="Header" width="643" height="68"></h3>
         <div class="box-cup fade-in-right">
             <div class="owl-carousel" id="slide-cup">
+                @foreach ($awards as $award)
                 <div class="item">
-                    <a href="" title="">
-                        <img src="images/example/cup01.png" width="140" height="167" alt=""/>
+                    <a href="javascript:void(0)" title="">
+                        <img src="{{url('cache/140x167', $award->image)}}" />
                     </a>
-                    <p class="year">2005</p>
+                    <p class="year">{{$award->year}}</p>
                 </div>
-                <div class="item">
-                    <a href="" title="">
-                        <img src="images/example/cup02.png" width="140" height="167" alt=""/>
-                    </a>
-                    <p class="year">2005</p>
-                </div>
-                <div class="item">
-                    <a href="" title="">
-                        <img src="images/example/cup03.png" width="140" height="167" alt=""/>
-                    </a>
-                    <p class="year">2005</p>
-                </div>
-                <div class="item">
-                    <a href="" title="">
-                        <img src="images/example/cup04.png" width="140" height="167" alt=""/>
-                    </a>
-                    <p class="year">2005</p>
-                </div>
-                <div class="item">
-                    <a href="" title="">
-                        <img src="images/example/cup05.png" width="140" height="167" alt=""/>
-                    </a>
-                    <p class="year">2005</p>
-                </div>
-                <div class="item">
-                    <a href="" title="">
-                        <img src="images/example/cup01.png" width="140" height="167" alt=""/>
-                    </a>
-                    <p class="year">2005</p>
-                </div>
+                @endforeach
             </div>
             <div class="mess">
                 <p>

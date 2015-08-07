@@ -61,6 +61,9 @@ return array(
         '256x256' => function($image) {
             return $image->fit(256, 256);
         },
+        '140x167' => function($image) {
+            return $image->fit(140, 167);
+        },
     ),
 
     /*

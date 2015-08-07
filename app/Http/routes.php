@@ -28,7 +28,8 @@ Route::get('/', function () {
         $q->where('slug', 'tu-thien-trang-chu')->orderBy('order');
     })->limit(4)->get();
 
-    $friends = \App\Friend::limit(4)->get();
+    $friends = \App\Friend::limit(10)->get();
+    $awards = \App\Award::limit(10)->get();
 
 
     $products = Post::where('status', true)->whereHas('modules', function($q){
@@ -40,7 +41,7 @@ Route::get('/', function () {
     })->limit(4)->get();
 
 
-    return view('frontend.index', compact('page', 'news', 'products', 'forms', 'charities', 'friends'))->with('meta_title', 'Trang chủ | Tuệ Linh');
+    return view('frontend.index', compact('page', 'news', 'products', 'forms', 'charities', 'friends', 'awards'))->with('meta_title', 'Trang chủ | Tuệ Linh');
 });
 
 Route::get('home', function () {
@@ -53,6 +54,7 @@ Route::resource('admin/categories', 'CategoriesController');
 Route::resource('admin/posts', 'PostsController');
 Route::resource('admin/deliveries', 'DeliveriesController');
 Route::resource('admin/friends', 'FriendsController');
+Route::resource('admin/awards', 'AwardsController');
 
 
 Route::get('/admin', [
