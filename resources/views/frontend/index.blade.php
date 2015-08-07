@@ -104,7 +104,7 @@
             <div class="item wow rotate-left" data-wow-delay="0.6s" data-wow-duration="1s">
                 <div class="item-bg">
                     <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{$post->title}}">
-                        <img src="{{url('cache/256x256',  \App\ImageReverse::img($post->image))}}" width="256" height="256" alt=""/>
+                        <img src="{{url('cache/256x256',  \App\ImageReverse::img($post->image))}}" alt=""/>
                     </a>
                 </div>
                 <div class="des">
