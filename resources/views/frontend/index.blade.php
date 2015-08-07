@@ -81,7 +81,7 @@
             <div class="item">
                 <a href="{{url(str_slug($post->title.' '.$post->id))}}" class="thumb">
                     <img src="{{url('cache/500x350', \App\ImageReverse::img($post->image))}}" alt="" width="500" height="350"></a>
-                <h3><a href="{{url(str_slug($post->title.' '.$post->id))}}">{{url($post->title)}}</a></h3>
+                <h3><a href="{{url(str_slug($post->title.' '.$post->id))}}">{{$post->title}}</a></h3>
                 <p>{{$post->desc}}</p>
             </div>
             @endforeach
