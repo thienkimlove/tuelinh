@@ -168,7 +168,7 @@ class updateImages extends Seeder
                 $filename = md5(time()) . '.' . pathinfo(parse_url($image)['path'], PATHINFO_EXTENSION);
                 if (file_exists(str_replace('http://tuelinh.vn/', '/var/www/html/', $image))) {
                     copy($image, public_path('files/tuelinh/' . $filename));
-                    $post->image = $image;
+                    $post->image = $filename;
                     $post->save();
                 }
             }
