@@ -64,6 +64,12 @@ return array(
         '140x167' => function($image) {
             return $image->fit(140, 167);
         },
+        '256x190' => function($image) {
+            return $image->fit(256, 190);
+        },
+        '220x130' => function($image) {
+            return $image->fit(220, 130);
+        },
     ),
 
     /*

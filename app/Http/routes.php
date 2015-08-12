@@ -92,7 +92,7 @@ Route::get('/{value}', function ($value) {
 
         $posts = Post::whereIn('category_id', $category->subCategories->lists('id'))
             ->latest('updated_at')
-            ->paginate(16);
+            ->paginate(15);
 
         return view('frontend.tin-tuc', compact('page', 'posts'))->with('meta_title', 'Tin tức | Tuệ Linh');
 
@@ -193,13 +193,13 @@ Route::get('{value1}/{value2}', function($value1, $value2) {
     if (in_array($category->slug, ['me-va-be', 'y-hoc-co-truyen', 'khoe-va-dep'])) {
         $posts = Post::where('category_id', $category->id)
             ->latest('updated_at')
-            ->paginate(16);
+            ->paginate(15);
         return view('frontend.tin-y-duoc', compact('page', 'category', 'posts'))->with('meta_title', 'Tin y dược | Tuệ Linh');
 
     } elseif (in_array($category->slug, ['tu-thien', 'tin-tuyen-dung', 'thu-vien'])) {
         $posts = Post::where('category_id', $category->id)
             ->latest('updated_at')
-            ->paginate(16);
+            ->paginate(15);
         return view('frontend.tin-tuc', compact('page', 'posts', 'category'))->with('meta_title', 'Tin tức | Tuệ Linh');
     }
 });

@@ -27,7 +27,7 @@
                 @foreach ($news as $post)
                 <div class="item wow animated" data-wow-delay="0.6s" data-wow-duration="1s">
                     <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{$post->title}}">
-                        <img src="{{url('cache/256x256',  \App\ImageReverse::img($post->image))}}" width="256" height="256" alt=""/>
+                        <img src="{{url('cache/256x256',  $post->image)}}"  alt=""/>
                     </a>
                     <p class="soft-news">{{$post->category->title}}</p>
                     <h3>
@@ -80,7 +80,7 @@
             @foreach ($gPost as $post)
             <div class="item">
                 <a href="{{url(str_slug($post->title.' '.$post->id))}}" class="thumb">
-                    <img src="{{url('cache/500x350', \App\ImageReverse::img($post->image))}}" alt="" width="500" height="350"></a>
+                    <img src="{{url('cache/500x350', $post->image)}}" alt="" ></a>
                 <h3><a href="{{url(str_slug($post->title.' '.$post->id))}}">{{$post->title}}</a></h3>
                 <p>{{$post->desc}}</p>
             </div>
@@ -104,7 +104,7 @@
             <div class="item wow rotate-left" data-wow-delay="0.6s" data-wow-duration="1s">
                 <div class="item-bg">
                     <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{$post->title}}">
-                        <img src="{{url('cache/256x256',  \App\ImageReverse::img($post->image))}}" alt=""/>
+                        <img src="{{url('cache/256x256',  $post->image)}}" alt=""/>
                     </a>
                 </div>
                 <div class="des">
@@ -137,7 +137,7 @@
                 @foreach ($charities as $post)
                 <div class="item wow animated" data-wow-delay="0.6s" data-wow-duration="1s">
                     <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{$post->title}}">
-                        <img src="{{url('cache/500x350', \App\ImageReverse::img($post->image))}}" width="256" height="190" alt=""/>
+                        <img src="{{url('cache/256x190', $post->image)}}"  alt=""/>
                     </a>
                     <p class="soft-news">Tin công ty</p>
                     <h3>
@@ -163,7 +163,7 @@
                 @foreach ($friends as $friend)
                 <div class="item wow bounce-in" data-wow-delay="0.6s" data-wow-duration="1s">
                     <a href="#" title="">
-                        <img src="{{url('cache/256x256',  \App\ImageReverse::img($friend->image))}}" width="256" height="256" alt=""/>
+                        <img src="{{url('cache/256x256',  $friend->image)}}"  alt=""/>
                     </a>
                     <h3>
                         <a href="#" title="">{{$friend->title}}</a>

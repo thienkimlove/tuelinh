@@ -6,7 +6,7 @@
                 @foreach ($slidePosts as $slidePost)
                     <div class="item">
                         <a href="" title="">
-                            <img src="{{url('cache/small', $slidePost->image)}}" width="140" height="167" alt=""/>
+                            <img src="{{url('cache/140x167', $slidePost->image)}}"  alt=""/>
                         </a>
                         <div class="info-foot">
                             <h3>{{$slidePost->title}}</h3>

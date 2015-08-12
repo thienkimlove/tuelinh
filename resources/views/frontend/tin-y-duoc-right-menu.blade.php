@@ -15,13 +15,8 @@
 
     @include('frontend.right-lien-quan')
 
-    <div class="box-utility">
-        <div class="list-utility">
-            <a href=""><img src="{{url('images/bg/bg_u1.png')}}" alt="B1"></a>
-            <a href=""><img src="{{url('images/bg/bg_u2.png')}}" alt="B1"></a>
-            <a href=""><img src="{{url('images/bg/bg_u3.png')}}" alt="B1"></a>
-        </div>
-    </div>
+    @include('frontend.right-utility')
+
     <div class="box-form-email">
         <div class="head">
             Đăng ký nhận tin
@@ -53,7 +48,7 @@
             Social
         </div>
         <div class="item">
-            <img src="{{url('images/example/social.jpg')}}" alt="Social" width="300" height="274">
+            <div class="fb-page" data-href="https://www.facebook.com/tuelinh.vn" data-width="300" data-height="274" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/tuelinh.vn"><a href="https://www.facebook.com/tuelinh.vn">Tu? Linh</a></blockquote></div></div>
         </div>
     </div>
 </div>

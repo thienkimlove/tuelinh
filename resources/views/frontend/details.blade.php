@@ -16,7 +16,7 @@
                             @endforeach
                         </div><!--//box-tags-->
                         <div class="social-follow">
-                            <img src="{{url('images/example/social01.jpg')}}" alt="">
+                            <div class="fb-share-button" data-href="https://www.facebook.com/tuelinh.vn" data-layout="button_count"></div>
                         </div>
                         <div class="released-post">
                             <h3>Tin liên quan</h3>
@@ -27,7 +27,7 @@
                             </ul>
                         </div>
                         <div class="comment-post">
-                            <img src="{{url('images/example/social01.jpg')}}" alt="">
+                            <div class="fb-comments" data-href="https://www.facebook.com/tuelinh.vn" data-width="500" data-numposts="5"></div>
                         </div>
                     </article>
                 </div>
