@@ -6,7 +6,7 @@
                 @foreach ($slidePosts as $slidePost)
                     <div class="item">
                         <a href="{{url(str_slug($slidePost->title.' '.$slidePost->id))}}" title="">
-                            <img style="width: auto" src="{{url('cache/140x167', $slidePost->image)}}"  alt=""/>
+                            <img src="{{url('cache/263x313', $slidePost->image)}}"  alt=""/>
                         </a>
                         <div class="info-foot">
                             <h3><a href="{{url(str_slug($slidePost->title.' '.$slidePost->id))}}">{{$slidePost->title}}</a></h3>

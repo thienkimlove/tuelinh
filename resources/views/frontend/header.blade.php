@@ -86,13 +86,10 @@
         <nav>
             <ul class="nav-social">
                 <li>
-                    <a target="_blank" class="social-1" href="" title="">Facebook</a>
+                    <a target="_blank" class="social-1" href="https://www.facebook.com/tuelinh.vn" title="">Facebook</a>
                 </li>
                 <li>
-                    <a target="_blank" class="social-2" href="" title="">Twitter</a>
-                </li>
-                <li>
-                    <a target="_blank" class="social-3" href="" title="">Social3</a>
+                    <a target="_blank" class="social-3" href="https://www.youtube.com/user/tuelinhgroup" title="">Social3</a>
                 </li>
             </ul>
         </nav>

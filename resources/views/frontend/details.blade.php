@@ -27,7 +27,7 @@
                             </ul>
                         </div>
                         <div class="comment-post">
-                            <div class="fb-comments" data-href="https://www.facebook.com/tuelinh.vn" data-width="500" data-numposts="5"></div>
+                            <div class="fb-comments" data-href="http://tuelinh.vn" data-width="500" data-numposts="5"></div>
                         </div>
                     </article>
                 </div>

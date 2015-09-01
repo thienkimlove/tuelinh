@@ -23,6 +23,9 @@
                             </div>
                         </div>
                     </article>
+                    <div class="box-paging">
+                        {!! with(new \App\Pagination\AcmesPresenter($posts))->render() !!}
+                    </div>
                 </div>
                 @include('frontend.tracuu-right-menu', ['list' => $list])
             </div>

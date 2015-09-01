@@ -20,7 +20,7 @@
                             <li>Đường dây nóng: 0912571190.</li>
                         </ul>
                         <div class="map-tuelinh">
-                            <img src="{{url('images/example/maptuelinh.jpg')}}" alt="map">
+                           <iframe frameborder="0" width="479" height="259" src="https://www.google.com/maps/place/C%C3%B4ng+ty+TNHH+Tu%E1%BB%87+Linh/@21.0078767,105.8010542,17z/data=!4m2!3m1!1s0x3135ab5a02fbb0f5:0x75b5e966c9fb8bc0"></iframe>
                         </div>
                     </div>
                     <div class="col-right">

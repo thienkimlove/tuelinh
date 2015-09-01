@@ -168,7 +168,7 @@ Route::get('/{value}', function ($value) {
             } elseif (in_array($category->slug, ['dai-cuong-ve-benh', 'thuoc-nam-tri-benh', 'tim-thuoc-theo-benh'])) {
                 $posts = Post::where('category_id', $category->id)
                     ->latest('updated_at')
-                    ->get();
+                    ->paginate(16);
 
                 $list = Post::whereHas('modules', function($q) use ($category){
                     $q->where('slug', $category->slug)->orderBy('order');
