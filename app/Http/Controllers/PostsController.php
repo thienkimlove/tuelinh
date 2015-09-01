@@ -27,6 +27,7 @@ class PostsController extends BaseController
          'chuan-hoa-nguyen-lieu' => 'Hiện thị trong mục Chuẩn Hóa Vùng nguyên liệu trang chủ',
          'san-pham-trang-chu' => 'Hiện thị trong mục Sản phẩm trang chủ',
          'tu-thien-trang-chu' => 'Hiện thị trong mục Hoạt động từ thiện trang chủ',
+         'tin-tuc-trang-chu' => 'Hiện thị trong mục Tin tức trang chủ',
     ];
         $categories = Category::with('translations')->get();
         $this->display = [];

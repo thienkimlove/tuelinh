@@ -10,14 +10,14 @@
                             <div class="col-left">
                                 <ul class="list">
                                     @foreach ($postSlice = $posts->splice(floor($posts->count()/2)) as $post)
-                                        <li><a href="{{url(str_slug($post->title.' '.$post->id))}}">{{$post->title}}</a></li>
+                                        <li><a href="{{url(str_slug($post->title.' '.$post->id))}}">{{str_limit($post->title, env('TITLE_TRIM'))}}</a></li>
                                     @endforeach
                                 </ul>
                             </div>
                             <div class="col-right">
                                 <ul class="list">
                                     @foreach ($posts as $post)
-                                        <li><a href="{{url(str_slug($post->title.' '.$post->id))}}">{{$post->title}}</a></li>
+                                        <li><a href="{{url(str_slug($post->title.' '.$post->id))}}">{{str_limit($post->title, env('TITLE_TRIM'))}}</a></li>
                                     @endforeach
                                 </ul>
                             </div>

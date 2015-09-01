@@ -5,11 +5,11 @@
             <div class="owl-carousel" id="box-slide-foot">
                 @foreach ($slidePosts as $slidePost)
                     <div class="item">
-                        <a href="" title="">
-                            <img src="{{url('cache/140x167', $slidePost->image)}}"  alt=""/>
+                        <a href="{{url(str_slug($slidePost->title.' '.$slidePost->id))}}" title="">
+                            <img style="width: auto" src="{{url('cache/140x167', $slidePost->image)}}"  alt=""/>
                         </a>
                         <div class="info-foot">
-                            <h3>{{$slidePost->title}}</h3>
+                            <h3><a href="{{url(str_slug($slidePost->title.' '.$slidePost->id))}}">{{$slidePost->title}}</a></h3>
                             <p class="des">{{$slidePost->desc}}</p>
                         </div>
                     </div>

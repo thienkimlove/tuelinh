@@ -15,14 +15,16 @@ use App\Post;
 use Illuminate\Support\Str;
 
 
+
 Route::get('/', function () {
+    $locale = (session('locale'))? session('locale') : 'vi';
+    App::setLocale($locale);
+
     $page = 'homepage';
 
-
-    $news = Post::where('category_id', 8)
-        ->latest('updated_at')
-        ->limit(8)
-        ->get();
+    $news = Post::where('status', true)->whereHas('modules', function($q){
+        $q->where('slug', 'tin-tuc-trang-chu')->orderBy('order');
+    })->limit(8)->get();
 
     $charities = Post::where('status', true)->whereHas('modules', function($q){
         $q->where('slug', 'tu-thien-trang-chu')->orderBy('order');
@@ -44,7 +46,14 @@ Route::get('/', function () {
     return view('frontend.index', compact('page', 'news', 'products', 'forms', 'charities', 'friends', 'awards'))->with('meta_title', 'Trang chủ | Tuệ Linh');
 });
 
+Route::get('language/{locale}', function ($locale) {
+    session(['locale' => $locale]);
+    return redirect('/');
+});
+
 Route::get('home', function () {
+    $locale = (session('locale'))? session('locale') : 'vi';
+    App::setLocale($locale);
     $page = 'homepage';
     return view('frontend.index', compact('page'));
 });
@@ -69,12 +78,16 @@ Route::controllers([
 ]);
 
 Route::get('he-thong-phan-phoi/{value}', function($value){
+    $locale = (session('locale'))? session('locale') : 'vi';
+    App::setLocale($locale);
     $page = 'page-solution';
     $deliveries = \App\Delivery::where('slug', $value)->get();
     return view('frontend.hethongphanphoi-chitiet', compact('page', 'deliveries'))->with('meta_title', 'Hệ thống phân phối | Tuệ Linh');
 });
 
 Route::get('tag/{value}', function($value){
+    $locale = (session('locale'))? session('locale') : 'vi';
+    App::setLocale($locale);
     $page = 'page-solution';
     $tag = \App\Tag::where('slug', $value)->first();
     $posts = Post::whereHas('tags', function($q) use($tag){
@@ -84,6 +97,8 @@ Route::get('tag/{value}', function($value){
 });
 
 Route::get('/{value}', function ($value) {
+    $locale = (session('locale'))? session('locale') : 'vi';
+    App::setLocale($locale);
     $page = 'page-solution';
     if ($value == 'lien-he') {
         return view('frontend.lien-he', compact('page'))->with('meta_title', 'Liên hệ | Tuệ Linh');
@@ -188,6 +203,8 @@ Route::get('/{value}', function ($value) {
 });
 
 Route::get('{value1}/{value2}', function($value1, $value2) {
+    $locale = (session('locale'))? session('locale') : 'vi';
+    App::setLocale($locale);
     $page = 'page-solution';
     $category = \App\Category::where('slug', $value2)->first();
     if (in_array($category->slug, ['me-va-be', 'y-hoc-co-truyen', 'khoe-va-dep'])) {

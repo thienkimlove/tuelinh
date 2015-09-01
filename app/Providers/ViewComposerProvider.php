@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App;
 use App\Category;
 use App\Post;
 use Illuminate\Support\ServiceProvider;
@@ -15,6 +16,20 @@ class ViewComposerProvider extends ServiceProvider
      */
     public function boot()
     {
+
+        view()->composer('frontend.header', function ($view) {
+
+            $locales = [
+                'en' => 'English',
+                'vi' => 'Tiếng Việt',
+                'fr' => 'French'
+            ];
+
+            $current = App::getLocale();
+            $view->with(['locales' => $locales, 'current' => $current]);
+
+        });
+
         view()->composer('frontend.footer', function ($view) {
             $footerCates = Category::where('parent_id', null)
                 ->where('id', '<', 16)

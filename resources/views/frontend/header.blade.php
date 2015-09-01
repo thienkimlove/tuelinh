@@ -70,6 +70,19 @@
                 <input type="submit" value="" name="submit" class="btn"/>
             </form>
         </div>
+
+        <div class="language of-hide" id="language">
+            <div class="selected {{$current}}" id="selected">{{$locales[$current]}}</div>
+            <ul class="nav-language" id="nav-language">
+                @foreach ($locales as $key => $local)
+                  @if ($key !=  $current)
+                    <li>
+                        <a class="{{$key}}" href="{{url('language', $key)}}" title="">{{$local}}</a>
+                    </li>
+                    @endif
+                @endforeach
+            </ul>
+        </div>
         <nav>
             <ul class="nav-social">
                 <li>

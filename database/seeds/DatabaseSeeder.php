@@ -154,7 +154,7 @@ class updateImages extends Seeder
      */
     public function run()
     {
-        $posts = Post::all();
+        $posts = Post::where('image', '')->get();
         foreach ($posts as $post) {
 
             $avatar = DB::connection('mysql2')
@@ -166,8 +166,12 @@ class updateImages extends Seeder
             $image = !empty($avatar) ? $avatar->guid : '';
             if ($image) {
                 $filename = md5(time()) . '.' . pathinfo(parse_url($image)['path'], PATHINFO_EXTENSION);
-                if (file_exists(str_replace('http://tuelinh.vn/', '/var/www/html/', $image))) {
-                    copy($image, public_path('files/tuelinh/' . $filename));
+
+                $origin_path = str_replace('http://tuelinh.vn/', '', $image);
+
+
+                if (file_exists(public_path($origin_path))) {
+                    copy(public_path($origin_path), public_path('files/tuelinh/' . $filename));
                     $post->image = $filename;
                     $post->save();
                 }

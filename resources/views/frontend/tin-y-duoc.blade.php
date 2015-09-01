@@ -18,10 +18,10 @@
                                             <img src="{{url('cache/256x256',  \App\ImageReverse::img($post->image))}}"  alt=""/>
                                         </a>
                                         <h3>
-                                            <a href="{{url(str_slug($post->title.' '.$post->id))}}">{{$post->title}}</a>
+                                            <a href="{{url(str_slug($post->title.' '.$post->id))}}">{{str_limit($post->title, env('TITLE_TRIM'))}}</a>
                                         </h3>
                                         <p>
-                                            <a href="{{url(str_slug($post->title.' '.$post->id))}}">{{$post->desc}}</a>
+                                            <a href="{{url(str_slug($post->title.' '.$post->id))}}">{{str_limit($post->desc, env('DESC_TRIM'))}}</a>
                                         </p>
                                     </div>
                                 @endforeach

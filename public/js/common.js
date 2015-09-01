@@ -538,6 +538,14 @@
         }
     };
 
+    var showLanguage = function(){
+        $('#language').hover(function(){
+            $(this).removeClass('of-hide').addClass('of-show');
+        },function(){
+            $(this).removeClass('of-show').addClass('of-hide');
+        });
+    };
+
     var expandFooter = function(){
         /*var status = 1;
         var hf = $('#footer').height();
@@ -720,6 +728,7 @@
         scrollWindow();
         changeElementObject();
         expandFooter();
+        showLanguage();
         sliderDetail();
         $(window).on('resize',function () {
             fixedScroll('#nav-control');
