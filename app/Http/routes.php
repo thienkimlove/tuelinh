@@ -111,9 +111,10 @@ Route::get('/{value}', function ($value) {
     $page = 'page-solution';
     if ($value == 'lien-he') {
         $departments = [
-            'Phòng Hành Chính',
-            'Phòng Kế toán',
-            'Phòng Marketing'
+            'Marketing',
+            'Hành Chính Nhân Sự',
+            'Kế Toán',
+            'Quản trị bán hàng'
         ];
         return view('frontend.lien-he', compact('page', 'departments'))->with('meta_title', 'Liên hệ | Tuệ Linh');
     } elseif ($value == 'tin-tuc') {
