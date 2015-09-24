@@ -2,47 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\City;
 use App\Delivery;
 use App\Http\Requests;
 use App\Http\Requests\DeliveryRequest;
-use Illuminate\Support\Str;
+use App\Product;
 
 class DeliveriesController extends BaseController
 {
-    protected $province, $area;
+    protected $province, $area, $product;
     public function __construct()
     {
-        $provinces = array(
-            'Hải Phòng','Huế',
-            'Đắk Lắk', 'Cần Thơ', 'Phú Yên',
-            'Hồ Chí Minh', 'Hà Nội', 'Đà Nẵng',
-            'An Giang', 'Bà Rịa - Vũng Tàu',
-            'Bắc Giang', 'Bắc Kạn', 'Bạc Liêu',
-            'Bắc Ninh', 'Bến Tre', 'Bình Định',
-            'Bình Dương', 'Bình Phước', 'Bình Thuận',
-            'Cà Mau', 'Cao Bằng', 'Yên Bái',
-            'Đắk Nông', 'Điện Biên', 'Đồng Nai',
-            'Đồng Tháp', 'Gia Lai', 'Hà Giang',
-            'Hà Nam', 'Hà Tĩnh', 'Hải Dương',
-            'Hậu Giang', 'Hòa Bình', 'Hưng Yên',
-            'Khánh Hòa', 'Kiên Giang', 'Kon Tum',
-            'Lai Châu', 'Lâm Đồng', 'Lạng Sơn',
-            'Lào Cai', 'Long An', 'Nam Định',
-            'Nghệ An', 'Ninh Bình', 'Ninh Thuận',
-            'Phú Thọ', 'Quảng Bình', 'Quảng Nam',
-            'Quảng Ngãi', 'Quảng Ninh', 'Quảng Trị',
-            'Sóc Trăng', 'Sơn La', 'Tây Ninh',
-            'Thái Bình', 'Thái Nguyên', 'Thanh Hóa',
-            'Thừa Thiên Huế', 'Tiền Giang', 'Trà Vinh',
-            'Tuyên Quang', 'Vĩnh Long', 'Vĩnh Phúc',
-        );
-
         $areas = ['Miền Bắc', 'Miền Trung', 'Miền Nam'];
         $this->area = [];
-        $this->province = [];
-        foreach ($provinces as $province) {
-            $this->province[$province] = $province;
-        }
+        $this->province = City::lists('name', 'id');
+        $this->product = Product::lists('name', 'id');
         foreach ($areas as $area) {
             $this->area[$area] = $area;
         }
@@ -66,8 +40,9 @@ class DeliveriesController extends BaseController
     public function create()
     {
         $cities = $this->province;
+        $products = $this->product;
         $areas = $this->area;
-        return view('admin.delivery.form', compact('cities', 'areas'));
+        return view('admin.delivery.form', compact('cities', 'areas', 'products'));
     }
 
     /**
@@ -79,11 +54,8 @@ class DeliveriesController extends BaseController
     public function store(DeliveryRequest $request)
     {
         $data = $request->all();
-        $data['slug'] = Str::slug($data['city']);
         Delivery::create($data);
-
         flash(trans('common.delivery_create_success'), 'success');
-
         return redirect('admin/deliveries');
     }
 
@@ -108,8 +80,9 @@ class DeliveriesController extends BaseController
     {
         $cities = $this->province;
         $areas = $this->area;
+        $products = $this->product;
         $delivery = Delivery::find($id);
-        return view('admin.delivery.form', compact('delivery', 'cities', 'areas'));
+        return view('admin.delivery.form', compact('delivery', 'cities', 'areas', 'products'));
     }
 
     /**
@@ -123,10 +96,7 @@ class DeliveriesController extends BaseController
     {
 
         $data = $request->all();
-        $data['slug'] = Str::slug($data['city']);
-
         $delivery = Delivery::find($id);
-
         $delivery->update($data);
 
         flash(trans('common.delivery_edit_success'), 'success');

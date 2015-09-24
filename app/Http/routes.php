@@ -72,18 +72,26 @@ Route::get('/admin', [
     'middleware' => ['auth', 'admin']
 ]);
 
+Route::get('import-phan-phoi', 'MainController@import');
+Route::get('replace', 'MainController@replace');
+Route::post('saveContact', ['as' => 'saveContact', 'uses' => 'MainController@saveContact']);
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('he-thong-phan-phoi/{value}', function($value){
+Route::get('he-thong-phan-phoi/{product}/{city}', function($product_id, $city_id){
     $locale = (session('locale'))? session('locale') : 'vi';
     App::setLocale($locale);
     $page = 'page-solution';
-    $deliveries = \App\Delivery::where('slug', $value)->get();
-    return view('frontend.hethongphanphoi-chitiet', compact('page', 'deliveries'))->with('meta_title', 'Hệ thống phân phối | Tuệ Linh');
+    $deliveries = \App\Delivery::where('city_id', $city_id)
+        ->where('product_id', $product_id)
+        ->get();
+    $city = \App\City::find($city_id);
+    $product = \App\Product::find($product_id);
+
+    return view('frontend.hethongphanphoi-chitiet', compact('page', 'deliveries', 'city', 'product'))->with('meta_title', 'Hệ thống phân phối | Tuệ Linh');
 });
 
 Route::get('tag/{value}', function($value){
@@ -102,7 +110,12 @@ Route::get('/{value}', function ($value) {
     App::setLocale($locale);
     $page = 'page-solution';
     if ($value == 'lien-he') {
-        return view('frontend.lien-he', compact('page'))->with('meta_title', 'Liên hệ | Tuệ Linh');
+        $departments = [
+            'Phòng Hành Chính',
+            'Phòng Kế toán',
+            'Phòng Marketing'
+        ];
+        return view('frontend.lien-he', compact('page', 'departments'))->with('meta_title', 'Liên hệ | Tuệ Linh');
     } elseif ($value == 'tin-tuc') {
         $category = \App\Category::where('slug', 'tin-tuc')->first();
 
@@ -114,36 +127,20 @@ Route::get('/{value}', function ($value) {
 
     } elseif ($value == 'he-thong-phan-phoi') {
 
-        $request = urldecode(Request::input('product'));
-        if (!empty($request)) {
-            $deliveries = \App\Delivery::where('product', $request)->get();
-            $all = \App\Delivery::all();
-        } else {
-            $all = $deliveries = \App\Delivery::all();
-        }
-        $products = [];
-        $area = array(
-            array('name' => 'Miền Bắc', 'elements' => array()),
-            array('name' => 'Miền Trung', 'elements' => array()),
-            array('name' => 'Miền Nam', 'elements' => array()),
-        );
-        foreach ($deliveries as $delivery) {
-            if ($delivery->area == 'Miền Bắc' && !in_array($delivery->city, $area[0]['elements'])) {
-                $area[0]['elements'][] = $delivery->city;
-            }
-            if ($delivery->area == 'Miền Trung' && !in_array($delivery->city, $area[1]['elements'])) {
-                $area[1]['elements'][] = $delivery->city;
-            }
-            if ($delivery->area == 'Miền Nam' && !in_array($delivery->city, $area[2]['elements'])) {
-                $area[2]['elements'][] = $delivery->city;
-            }
-        }
-        foreach ($all as $delivery) {
-            if (!in_array($delivery->product, $products)) {
-                $products[] = $delivery->product;
-            }
-        }
-        return view('frontend.he-thong-phan-phoi', compact('page','request', 'area', 'products'))->with('meta_title', 'Hệ thống phân phối | Tuệ Linh');
+        $city_ids = DB::table('deliveries')
+            ->select(DB::raw('DISTINCT(city_id) as ids'))
+            ->where('city_id', '>', 0)
+            ->lists('ids');
+
+        $product_ids = DB::table('deliveries')
+            ->select(DB::raw('DISTINCT(product_id) as ids'))
+            ->where('product_id', '>', 0)
+            ->lists('ids');
+
+        $products = \App\Product::whereIn('id', $product_ids)->lists('name', 'id');
+        $cities = \App\City::whereIn('id', $city_ids)->lists('name', 'id');
+
+        return view('frontend.he-thong-phan-phoi', compact('page', 'products', 'cities'))->with('meta_title', 'Hệ thống phân phối | Tuệ Linh');
 
     }  elseif (preg_match('/[a-z0-9\-]+-(\d+)/', $value, $matches)) {
         //posts         
@@ -162,8 +159,9 @@ Route::get('/{value}', function ($value) {
         $currentTuelinh = null;
 
         $banner = Setting::where('name', 'banner_chitiet')->first()->value;
+        $meta_image = url('cache/256x256',  \App\ImageReverse::img($post->image));
 
-        return view('frontend.details', compact('page', 'banner', 'post', 'relatePosts', 'tuelinh', 'currentTuelinh'))->with('meta_title', $post->title.' | Tuệ Linh');
+        return view('frontend.details', compact('meta_image','page', 'banner', 'post', 'relatePosts', 'tuelinh', 'currentTuelinh'))->with('meta_title', $post->title.' | Tuệ Linh');
     }  else {
         if (in_array($value, ['dai-cuong-ve-benh', 'thuoc-nam-tri-benh', 'tim-thuoc-theo-benh', 'san-pham'])) {
             //parent_categories.

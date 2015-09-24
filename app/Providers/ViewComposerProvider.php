@@ -5,6 +5,7 @@ namespace App\Providers;
 use App;
 use App\Category;
 use App\Post;
+use DB;
 use Illuminate\Support\ServiceProvider;
 
 class ViewComposerProvider extends ServiceProvider
@@ -16,6 +17,16 @@ class ViewComposerProvider extends ServiceProvider
      */
     public function boot()
     {
+        DB::listen(function($sql, $bindings) {
+
+            for($j=0; $j<sizeof($bindings); $j++) {
+                $sql = implode($bindings[$j], explode('?', $sql, 2));
+            }
+            $logFile = fopen(storage_path('logs/query.log'), 'a+');
+            //write log to file
+            fwrite($logFile, $sql . "\n");
+            fclose($logFile);
+        });
 
         view()->composer('frontend.header', function ($view) {
 

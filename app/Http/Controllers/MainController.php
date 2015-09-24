@@ -1,11 +1,83 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\City;
+use App\Contact;
+use App\Delivery;
 use App\Http\Requests;
+use App\Http\Requests\ContactRequest;
+use App\Product;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class MainController extends Controller
 {
+    /**
+     * Them tinh thanh hay san pham vao cuoi cung cua mang? sau do run
+     * tuelinh.vn/import-phan-phoi
+     */
+    public function import(){
+
+        $provinces = array(
+            'Hải Phòng','Huế',
+            'Đắk Lắk', 'Cần Thơ', 'Phú Yên',
+            'Hồ Chí Minh', 'Hà Nội', 'Đà Nẵng',
+            'An Giang', 'Bà Rịa - Vũng Tàu',
+            'Bắc Giang', 'Bắc Kạn', 'Bạc Liêu',
+            'Bắc Ninh', 'Bến Tre', 'Bình Định',
+            'Bình Dương', 'Bình Phước', 'Bình Thuận',
+            'Cà Mau', 'Cao Bằng', 'Yên Bái',
+            'Đắk Nông', 'Điện Biên', 'Đồng Nai',
+            'Đồng Tháp', 'Gia Lai', 'Hà Giang',
+            'Hà Nam', 'Hà Tĩnh', 'Hải Dương',
+            'Hậu Giang', 'Hòa Bình', 'Hưng Yên',
+            'Khánh Hòa', 'Kiên Giang', 'Kon Tum',
+            'Lai Châu', 'Lâm Đồng', 'Lạng Sơn',
+            'Lào Cai', 'Long An', 'Nam Định',
+            'Nghệ An', 'Ninh Bình', 'Ninh Thuận',
+            'Phú Thọ', 'Quảng Bình', 'Quảng Nam',
+            'Quảng Ngãi', 'Quảng Ninh', 'Quảng Trị',
+            'Sóc Trăng', 'Sơn La', 'Tây Ninh',
+            'Thái Bình', 'Thái Nguyên', 'Thanh Hóa',
+            'Thừa Thiên Huế', 'Tiền Giang', 'Trà Vinh',
+            'Tuyên Quang', 'Vĩnh Long', 'Vĩnh Phúc',
+        );
+
+        DB::statement('TRUNCATE table cities');
+        foreach ($provinces as $pro) {
+            DB::table('cities')->insert([
+                'name' => $pro
+            ]);
+        }
+
+        $products = [
+            'Dưỡng thận Tuệ Linh',
+            'Trà Giảo Cổ Lam',
+            'Trà Giải Độc Gan',
+            'Cà gai leo Tuệ Linh',
+        ];
+
+        DB::statement('TRUNCATE table products');
+
+        foreach ($products as $pro) {
+            DB::table('products')->insert([
+                'name' => $pro
+            ]);
+        }
+
+    }
+
+    /**
+     * save contact form.
+     * @param ContactRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function saveContact(ContactRequest $request)
+    {
+        Contact::create($request->all());
+        return redirect('/');
+    }
+
     /**
      * Display a listing of the resource.
      *

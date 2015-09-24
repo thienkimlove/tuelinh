@@ -17,11 +17,11 @@
                             <tr>
                                 <th>#</th>
                                 <th>{{trans('common.delivery_list_city_label')}}</th>
+                                <th>Product</th>
                                 <th>{{trans('common.delivery_list_title_label')}}</th>
                                 <th>{{trans('common.delivery_list_address_label')}}</th>
                                 <th>{{trans('common.delivery_list_phone_label')}}</th>
                                 <th>{{trans('common.delivery_list_area_label')}}</th>
-                                <th>San Pham</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -29,12 +29,12 @@
                             @foreach($deliveries as $cat)
                             <tr>
                                 <td>{{$cat->id}}</td>
-                                <td>{{$cat->city}}</td>
+                                <td>{{$cat->city->name}}</td>
+                                <td>{{$cat->product->name}}</td>
                                 <td>{{$cat->title}}</td>
                                 <td>{{$cat->address}}</td>
                                 <td>{{$cat->phone}}</td>
                                 <td>{{$cat->area}}</td>
-                                <td>{{$cat->product}}</td>
                                 <td>
                                     <button id-attr="{{$cat->id}}" class="btn btn-primary btn-sm edit-delivery" type="button">{{trans('common.button_edit')}}</button>&nbsp;
                                     {!! Form::open(['method' => 'DELETE', 'route' => ['admin.deliveries.destroy', $cat->id]]) !!}

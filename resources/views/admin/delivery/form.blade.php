@@ -17,8 +17,8 @@
             {!! Form::model($delivery = new App\Delivery,['route' => ['admin.deliveries.store']]) !!}
             @endif
             <div class="form-group">
-                {!! Form::label('city', trans('common.delivery_form_city_label')) !!}
-                {!! Form::select('city', $cities, null, ['class' => 'form-control']) !!}
+                {!! Form::label('city_id', trans('common.delivery_form_city_label')) !!}
+                {!! Form::select('city_id', $cities, null, ['class' => 'form-control']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('title', trans('common.delivery_form_title_label')) !!}
@@ -39,8 +39,8 @@
             </div>
 
             <div class="form-group">
-                {!! Form::label('product', 'San pham') !!}
-                {!! Form::text('product', null, ['class' => 'form-control']) !!}
+                {!! Form::label('product_id', 'Product') !!}
+                {!! Form::select('product_id', $products, null, ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">

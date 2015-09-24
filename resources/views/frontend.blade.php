@@ -5,7 +5,10 @@
     <link href="https://plus.google.com/107515763736347546999" rel="publisher"/>
     <link rel="stylesheet" href="{{url('css/frontend.css')}}" type="text/css"/>
     <title>{{(!empty($meta_title)) ? $meta_title : 'Homepage | Tuệ Linh'}}</title>
-
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{Request::url()}}">
+    <meta property="og:image" content="{{ empty($meta_image) ? url('images/logo.png') : $meta_image  }}">
+    <meta property="og:site_name" content="Tuệ Linh">
 
     <!--[if lte IE 8]>
     <script src="{{url('js/html5.js')}}" type="text/javascript"></script>

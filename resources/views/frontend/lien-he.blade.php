@@ -25,14 +25,21 @@
                     </div>
                     <div class="col-right">
                         <h3 class="head">Gửi thư liên hệ</h3>
-                        <form action="" method="post">
+                        {!! Form::open(['method' => 'POST', 'route' => ['saveContact'], 'name' => 'questionForm']) !!}
                             <input type="text" name="name" class="txt txt-name" placeholder="Họ và tên"/>
                             <input type="email" name="email" class="txt txt-email" placeholder="Email"/>
                             <input type="number" name="phone" class="txt txt-phone" placeholder="Số điện thoại"/>
+                            <input type="text" name="title" class="txt txt-name" placeholder="Tiêu đề"/>
+                            <select name="department" class="txt txt-name">
+                                <option>Chọn phòng ban</option>
+                                @foreach ($departments as $department)
+                                    <option value="{{$department}}">{{$department}}</option>
+                                @endforeach
+                            </select>
                             <textarea name="content" class="txt txt-content" placeholder="Nội dung"></textarea>
                             <input type="submit" value="gửi đi" class="btn btn-submit"/>
                             <input type="reset" value="Làm lại" class="btn btn-submit"/>
-                        </form>
+                       {!! Form::close() !!}
                     </div>
                     <div class="clear"></div>
                 </div>

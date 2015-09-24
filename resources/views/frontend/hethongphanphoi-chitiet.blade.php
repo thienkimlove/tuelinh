@@ -4,7 +4,7 @@
         <div class="fix">
             <div class="layout">
                 <div class="box-distribution">
-                    <h1 class="title">Hệ thống phân phối tại {{$deliveries->first()->city}}</h1>
+                    <h1 class="title">Hệ thống phân phối tại {{$city->name}} với sản phẩm {{$product->name}}</h1>
                     <div class="table table01">
                         <div class="row row01">
                             <div class="cel bg01">Số thứ tự</div>
@@ -19,7 +19,7 @@
                               <div class="cel taC">{{$delivery->title}}</div>
                               <div class="cel taC">{{$delivery->address}}</div>
                               <div class="cel taC">{{$delivery->phone}}</div>
-                              <div class="cel taC">{{$delivery->product}}</div>
+                              <div class="cel taC">{{$delivery->product->name}}</div>
                         </div>
                         @endforeach
                     </div>

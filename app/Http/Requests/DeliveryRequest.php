@@ -22,7 +22,8 @@ class DeliveryRequest extends Request
     public function rules()
     {
         return [
-            'city' => 'required',
+            'city_id' => 'required',
+            'product_id' => 'required',
             'title' => 'required',
             'phone' => 'required',
             'address' => 'required',
