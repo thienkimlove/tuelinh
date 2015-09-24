@@ -73,5 +73,12 @@
        'delivery_edit_success' => 'Sửa nhà phân phối thành công!',
        'delivery_delete_success' => 'Xóa nhà phân phối thành công!',
 
-
+       //FRONTEND
+       'home_cate' => 'Home',
+       'recommend_cate' => 'Recommend',
+       'search_placeholder' => 'Keyword',
+       'contact_cate' => 'Contact',
+       'delivery_cate' => 'Delivery System',
+       'yduoc_cate' => 'Tin y dược',
+       'tracuu_cate' => 'Tra cứu'
    ];

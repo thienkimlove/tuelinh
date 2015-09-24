@@ -12,6 +12,7 @@
 */
 
 use App\Post;
+use App\Setting;
 use Illuminate\Support\Str;
 
 
@@ -48,7 +49,7 @@ Route::get('/', function () {
 
 Route::get('language/{locale}', function ($locale) {
     session(['locale' => $locale]);
-    return redirect('/');
+    return redirect(Request::input('return'));
 });
 
 Route::get('home', function () {
@@ -112,8 +113,15 @@ Route::get('/{value}', function ($value) {
         return view('frontend.tin-tuc', compact('page', 'posts'))->with('meta_title', 'Tin tức | Tuệ Linh');
 
     } elseif ($value == 'he-thong-phan-phoi') {
-        $deliveries = \App\Delivery::all();
-        $cities = [];
+
+        $request = urldecode(Request::input('product'));
+        if (!empty($request)) {
+            $deliveries = \App\Delivery::where('product', $request)->get();
+            $all = \App\Delivery::all();
+        } else {
+            $all = $deliveries = \App\Delivery::all();
+        }
+        $products = [];
         $area = array(
             array('name' => 'Miền Bắc', 'elements' => array()),
             array('name' => 'Miền Trung', 'elements' => array()),
@@ -129,15 +137,17 @@ Route::get('/{value}', function ($value) {
             if ($delivery->area == 'Miền Nam' && !in_array($delivery->city, $area[2]['elements'])) {
                 $area[2]['elements'][] = $delivery->city;
             }
-            if (!in_array($delivery->city, $cities)) {
-                $cities[] = $delivery->city;
+        }
+        foreach ($all as $delivery) {
+            if (!in_array($delivery->product, $products)) {
+                $products[] = $delivery->product;
             }
         }
-        return view('frontend.he-thong-phan-phoi', compact('page', 'area', 'cities'))->with('meta_title', 'Hệ thống phân phối | Tuệ Linh');
+        return view('frontend.he-thong-phan-phoi', compact('page','request', 'area', 'products'))->with('meta_title', 'Hệ thống phân phối | Tuệ Linh');
 
     }  elseif (preg_match('/[a-z0-9\-]+-(\d+)/', $value, $matches)) {
-        //posts
-        $post = Post::find($matches[1]);
+        //posts         
+        $post = Post::find($matches[1]);        
         $tuelinh = Post::whereHas('category', function($q){
             $q->where('slug', 'tue-linh');
         })->get();
@@ -151,7 +161,9 @@ Route::get('/{value}', function ($value) {
 
         $currentTuelinh = null;
 
-        return view('frontend.details', compact('page', 'post', 'relatePosts', 'tuelinh', 'currentTuelinh'))->with('meta_title', $post->title.' | Tuệ Linh');
+        $banner = Setting::where('name', 'banner_chitiet')->first()->value;
+
+        return view('frontend.details', compact('page', 'banner', 'post', 'relatePosts', 'tuelinh', 'currentTuelinh'))->with('meta_title', $post->title.' | Tuệ Linh');
     }  else {
         if (in_array($value, ['dai-cuong-ve-benh', 'thuoc-nam-tri-benh', 'tim-thuoc-theo-benh', 'san-pham'])) {
             //parent_categories.
@@ -168,7 +180,7 @@ Route::get('/{value}', function ($value) {
             } elseif (in_array($category->slug, ['dai-cuong-ve-benh', 'thuoc-nam-tri-benh', 'tim-thuoc-theo-benh'])) {
                 $posts = Post::where('category_id', $category->id)
                     ->latest('updated_at')
-                    ->paginate(16);
+                    ->paginate(50);
 
                 $list = Post::whereHas('modules', function($q) use ($category){
                     $q->where('slug', $category->slug)->orderBy('order');
@@ -213,7 +225,7 @@ Route::get('{value1}/{value2}', function($value1, $value2) {
             ->paginate(15);
         return view('frontend.tin-y-duoc', compact('page', 'category', 'posts'))->with('meta_title', 'Tin y dược | Tuệ Linh');
 
-    } elseif (in_array($category->slug, ['tu-thien', 'tin-tuyen-dung', 'thu-vien'])) {
+    } elseif (in_array($category->slug, ['hoat-dong-tu-thien', 'tin-tuyen-dung', 'thu-vien'])) {
         $posts = Post::where('category_id', $category->id)
             ->latest('updated_at')
             ->paginate(15);

@@ -6,67 +6,67 @@
         <nav>
             <ul class="nav-main">
                 <li class="current-menu-item">
-                    <a href="{{url('/')}}" title="">Trang chủ</a>
+                    <a href="{{url('/')}}" title="">{{trans('common.home_cate')}}</a>
                 </li>
                 <li>
                     <a href="#" title="">Tuệ Linh</a>
                     <ul>
                         <li>
-                            <a href="{{url('gioi-thieu')}}" title="">Giới thiệu</a>
+                            <a href="{{url('gioi-thieu')}}" title="">{{trans('common.recommend_cate')}}</a>
                         </li>
                         <li>
-                            <a href="{{url('tin-tuc')}}" title="">Tin tức</a>
+                            <a href="{{url('tin-tuc')}}" title="">{{$cates['tin-tuc']}}</a>
                         </li>
                         <li>
-                            <a href="{{url('tin-tuc/tu-thien')}}" title="">Hoạt động từ thiện</a>
+                            <a href="{{url('tin-tuc/hoat-dong-tu-thien')}}" title="">{{$cates['hoat-dong-tu-thien']}}</a>
                         </li>
                         <li>
-                            <a href="{{url('tin-tuc/tin-tuyen-dung')}}" title="">Tuyển dụng</a>
+                            <a href="{{url('tin-tuc/tin-tuyen-dung')}}" title="">{{$cates['tin-tuyen-dung']}}</a>
                         </li>
                         <li class="last">
-                            <a href="{{url('tin-tuc/thu-vien')}}" title="">Thư viện</a>
+                            <a href="{{url('tin-tuc/thu-vien')}}" title="">{{$cates['thu-vien']}}</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="{{url('san-pham')}}" title="">Sản phẩm</a>
+                    <a href="{{url('san-pham')}}" title="">{{$cates['san-pham']}}</a>
                 </li>
                 <li>
-                    <a href="#" title="">Tin y dược</a>
+                    <a href="#" title="">{{trans('common.yduoc_cate')}}</a>
                     <ul>
                         <li>
-                            <a href="{{url('thong-tin-suc-khoe/me-va-be')}}" title="">Mẹ &amp; bé</a>
+                            <a href="{{url('thong-tin-suc-khoe/me-va-be')}}" title="">{{$cates['me-va-be']}}</a>
                         </li>
                         <li>
-                            <a href="{{url('thong-tin-suc-khoe/y-hoc-co-truyen')}}" title="">Y học cổ truyền</a>
+                            <a href="{{url('thong-tin-suc-khoe/y-hoc-co-truyen')}}" title="">{{$cates['y-hoc-co-truyen']}}</a>
                         </li>
                         <li>
-                            <a href="{{url('thong-tin-suc-khoe/khoe-va-dep')}}" title="">Khỏe và đẹp</a>
+                            <a href="{{url('thong-tin-suc-khoe/khoe-va-dep')}}" title="">{{$cates['khoe-va-dep']}}</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#" title="">Tra cứu</a>
+                    <a href="#" title="">{{trans('common.tracuu_cate')}}</a>
                     <ul>
                         <li>
-                            <a href="{{url('dai-cuong-ve-benh')}}" title="">Đại cương về bệnh</a>
+                            <a href="{{url('dai-cuong-ve-benh')}}" title="">{{$cates['dai-cuong-ve-benh']}}</a>
                         </li>
                         <li>
-                            <a href="{{url('tim-thuoc-theo-benh')}}" title="">Tìm thuốc theo bệnh</a>
+                            <a href="{{url('tim-thuoc-theo-benh')}}" title="">{{$cates['tim-thuoc-theo-benh']}}</a>
                         </li>
                         <li>
-                            <a href="{{url('thuoc-nam-tri-benh')}}" title="">Thuốc nam trị bệnh</a>
+                            <a href="{{url('thuoc-nam-tri-benh')}}" title="">{{$cates['thuoc-nam-tri-benh']}}</a>
                         </li>
                     </ul>
                 </li>
-                <li><a href="{{url('he-thong-phan-phoi')}}" title="">Hệ thống phân phối</a></li>
+                <li><a href="{{url('he-thong-phan-phoi')}}" title="">{{trans('common.delivery_cate')}}</a></li>
 
-                <li><a href="{{url('lien-he')}}" title="">Liên hệ</a></li>
+                <li><a href="{{url('lien-he')}}" title="">{{trans('common.contact_cate')}}</a></li>
             </ul>
         </nav>
         <div class="search" id="search">
             <form>
-                <input type="text" placeholder="Từ khóa tìm kiếm" name="keyword" class="txt"/>
+                <input type="text" placeholder="{{trans('common.search_placeholder')}}" name="keyword" class="txt"/>
                 <input type="submit" value="" name="submit" class="btn"/>
             </form>
         </div>
@@ -77,12 +77,13 @@
                 @foreach ($locales as $key => $local)
                   @if ($key !=  $current)
                     <li>
-                        <a class="{{$key}}" href="{{url('language', $key)}}" title="">{{$local}}</a>
+                        <a class="{{$key}}" key="{{$key}}" title="">{{$local}}</a>
                     </li>
                     @endif
                 @endforeach
             </ul>
         </div>
+
         <nav>
             <ul class="nav-social">
                 <li>

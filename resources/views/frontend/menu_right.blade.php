@@ -11,66 +11,63 @@
         </div>
         <nav>
             <ul class="nav-mobile">
-                <li class="active">
-                    <a href="trang-chu.html" title="">Trang chủ</a>
+               <li class="active">
+                    <a href="{{url('/')}}" title="">Trang chủ</a>
                 </li>
-                <li class="had-sub">
-                    <a href="" title="">Tuệ Linh</a>
+                <li class="has-sub">
+                    <a href="#" title="">Tuệ Linh</a>
                     <ul>
                         <li>
-                            <a href="tuelinh-gioithieu.html" title="">Giới thiệu</a>
+                            <a href="{{url('gioi-thieu')}}" title="">Giới thiệu</a>
                         </li>
                         <li>
-                            <a href="" title="">Tin tức</a>
+                            <a href="{{url('tin-tuc')}}" title="">Tin tức</a>
                         </li>
                         <li>
-                            <a href="" title="">Hoạt động từ thiện</a>
+                            <a href="{{url('tin-tuc/tu-thien')}}" title="">Hoạt động từ thiện</a>
                         </li>
                         <li>
-                            <a href="" title="">Tuyển dụng</a>
+                            <a href="{{url('tin-tuc/tin-tuyen-dung')}}" title="">Tuyển dụng</a>
                         </li>
                         <li class="last">
-                            <a href="" title="">Thư viện</a>
+                            <a href="{{url('tin-tuc/thu-vien')}}" title="">Thư viện</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="" title="">Sản phẩm</a>
+                    <a href="{{url('san-pham')}}" title="">Sản phẩm</a>
                 </li>
                 <li class="has-sub">
-                    <a href="" title="">Tin y dược</a>
+                    <a href="#" title="">Tin y dược</a>
                     <ul>
                         <li>
-                            <a href="" title="">Mẹ &amp; bé</a>
+                            <a href="{{url('thong-tin-suc-khoe/me-va-be')}}" title="">Mẹ &amp; bé</a>
                         </li>
                         <li>
-                            <a href="" title="">Y học cổ truyền</a>
+                            <a href="{{url('thong-tin-suc-khoe/y-hoc-co-truyen')}}" title="">Y học cổ truyền</a>
                         </li>
                         <li>
-                            <a href="" title="">Khỏe &amp; đẹp</a>
+                            <a href="{{url('thong-tin-suc-khoe/khoe-va-dep')}}" title="">Khỏe và đẹp</a>
                         </li>
                     </ul>
                 </li>
                 <li class="has-sub">
-                    <a href="" title="">Tra cứu</a>
+                    <a href="#" title="">Tra cứu</a>
                     <ul>
                         <li>
-                            <a href="" title="">Đại cương về bệnh</a>
+                            <a href="{{url('dai-cuong-ve-benh')}}" title="">Đại cương về bệnh</a>
                         </li>
                         <li>
-                            <a href="" title="">Tìm thuốc theo bệnh</a>
+                            <a href="{{url('tim-thuoc-theo-benh')}}" title="">Tìm thuốc theo bệnh</a>
                         </li>
                         <li>
-                            <a href="" title="">Thuốc nam trị bệnh</a>
+                            <a href="{{url('thuoc-nam-tri-benh')}}" title="">Thuốc nam trị bệnh</a>
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="" title="">Hệ thống phân phối</a>
-                </li>
-                <li>
-                    <a href="" title="">Liên hệ</a>
-                </li>
+                <li><a href="{{url('he-thong-phan-phoi')}}" title="">Hệ thống phân phối</a></li>
+
+                <li><a href="{{url('lien-he')}}" title="">Liên hệ</a></li>
             </ul>
         </nav>
     </div>

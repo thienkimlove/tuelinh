@@ -7,3 +7,5 @@ Homestead.yaml
 /public/js/libs/kcfinder/upload/*
 !/public/js/libs/kcfinder/upload/.htaccess
 /.idea
+tuelinh6_1.sql
+tuelinh6_2.sql

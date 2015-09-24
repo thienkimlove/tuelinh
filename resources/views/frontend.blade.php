@@ -30,7 +30,7 @@
 
         js = d.createElement(s); js.id = id;
 
-        js.src ="//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4&appId=1684069428493677";
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4&appId=1684069428493677";
 
         fjs.parentNode.insertBefore(js, fjs);
 
@@ -65,7 +65,14 @@
 
     ga('create', 'UA-22753009-1', 'auto');
     ga('send', 'pageview');
-
+    window.base_url = '{{url('/')}}';
+    window.currentUrl = '{{\Illuminate\Support\Facades\Request::url()}}';
+    $(function(){
+        $('#nav-language a').click(function(){
+            window.location.href = window.base_url + '/language/' + $(this).attr('key') + '?return=' + window.currentUrl;
+        });
+    });
 </script>
+@yield('footer')
 </body>
 </html>

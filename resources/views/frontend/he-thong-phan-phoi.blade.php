@@ -8,15 +8,20 @@
                     <div class="filter">
                         <div class="group">
                             <div class="option">
-                                <select class="select" title="Chọn tỉnh thành">
-                                    @foreach ($cities as $city)
-                                    <option value="">{{$city}}</option>
+                                <select id="select-delivery" class="select" title="Chọn Sản phẩm">
+                                    @foreach ($products as $product)
+                                    @if ($product == $request)
+                                    <option selected="true" value="{{$product}}">{{$product}}</option>
+                                    @else
+                                   <option value="{{$product}}">{{$product}}</option>
+                                    @endif
                                     @endforeach
                                 </select>
+
                             </div>
                             <div class="order">
                                 <div class="option">
-                                    <input type="button" value="Tìm kiếm" class="btn-search">
+                                    <input id="search-product" type="button" value="Tìm kiếm" class="btn-search">
                                 </div>
                             </div>
                         </div>
@@ -46,3 +51,15 @@
         </div>
     </section>
 @endsection
+
+@section('footer')
+    <script>
+        $( document ).ready(function(){
+            $('#search-product').click(function(){
+                var product = $('#select-delivery').val();
+                window.location.href = window.base_url + '/he-thong-phan-phoi/?product=' + encodeURI(product);
+            })
+        });
+    </script>
+@endsection
+

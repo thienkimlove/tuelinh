@@ -26,12 +26,12 @@
             <div class="owl-carousel" id="slide-news">
                 @foreach ($news as $post)
                 <div class="item wow animated" data-wow-delay="0.6s" data-wow-duration="1s">
-                    <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{str_limit($post->title, env('TITLE_TRIM'))}}">
+                    <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{str_limit($post->title, 62)}}">
                         <img src="{{url('cache/256x256',  $post->image)}}"  alt=""/>
                     </a>
                     <p class="soft-news">{{$post->category->title}}</p>
                     <h3>
-                        <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="">{{str_limit($post->title, env('TITLE_TRIM'))}}</a>
+                        <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="">{{str_limit($post->title, 62)}}</a>
                     </h3>
                     <h4>
                         <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{$post->title}}">Chi tiết</a>
@@ -141,7 +141,7 @@
                     </a>
                     <p class="soft-news">Hoạt động</p>
                     <h3>
-                        <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{$post->title}}">{{str_limit($post->title, env('TITLE_TRIM'))}}</a>
+                        <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{$post->title}}">{{str_limit($post->title, 62)}}</a>
                     </h3>
                     <h4>
                         <a href="{{url(str_slug($post->title.' '.$post->id))}}" title="{{$post->title}}">Chi tiết</a>

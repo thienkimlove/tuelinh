@@ -13,11 +13,14 @@ class DeliveriesController extends BaseController
     public function __construct()
     {
         $provinces = array(
+            'Hải Phòng','Huế',
+            'Đắk Lắk', 'Cần Thơ', 'Phú Yên',
+            'Hồ Chí Minh', 'Hà Nội', 'Đà Nẵng',
             'An Giang', 'Bà Rịa - Vũng Tàu',
             'Bắc Giang', 'Bắc Kạn', 'Bạc Liêu',
             'Bắc Ninh', 'Bến Tre', 'Bình Định',
             'Bình Dương', 'Bình Phước', 'Bình Thuận',
-            'Cà Mau', 'Cao Bằng', 'Đắk Lắk',
+            'Cà Mau', 'Cao Bằng', 'Yên Bái',
             'Đắk Nông', 'Điện Biên', 'Đồng Nai',
             'Đồng Tháp', 'Gia Lai', 'Hà Giang',
             'Hà Nam', 'Hà Tĩnh', 'Hải Dương',
@@ -32,7 +35,6 @@ class DeliveriesController extends BaseController
             'Thái Bình', 'Thái Nguyên', 'Thanh Hóa',
             'Thừa Thiên Huế', 'Tiền Giang', 'Trà Vinh',
             'Tuyên Quang', 'Vĩnh Long', 'Vĩnh Phúc',
-            'Yên Bái', 'Phú Yên'
         );
 
         $areas = ['Miền Bắc', 'Miền Trung', 'Miền Nam'];

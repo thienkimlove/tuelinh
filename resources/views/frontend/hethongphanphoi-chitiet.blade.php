@@ -11,6 +11,7 @@
                             <div class="cel bg02 taC">Nhà thuốc</div>
                             <div class="cel bg02 taC">Địa chỉ</div>
                             <div class="cel bg02 taC">Số điện thoại</div>
+                            <div class="cel bg02 taC">Sản phẩm</div>
                         </div>
                        @foreach ($deliveries as $k => $delivery)
                        <div class="row{{($k % 2 == 0)? ' bg' : ''}}">
@@ -18,6 +19,7 @@
                               <div class="cel taC">{{$delivery->title}}</div>
                               <div class="cel taC">{{$delivery->address}}</div>
                               <div class="cel taC">{{$delivery->phone}}</div>
+                              <div class="cel taC">{{$delivery->product}}</div>
                         </div>
                         @endforeach
                     </div>

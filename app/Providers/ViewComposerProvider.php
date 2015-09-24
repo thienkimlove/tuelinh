@@ -26,7 +26,12 @@ class ViewComposerProvider extends ServiceProvider
             ];
 
             $current = App::getLocale();
-            $view->with(['locales' => $locales, 'current' => $current]);
+            $footerCates = Category::all();
+            $ars = [];
+            foreach ($footerCates as $cate) {
+                 $ars[$cate->slug] = $cate->title;
+            }
+            $view->with(['locales' => $locales, 'current' => $current, 'cates' => $ars]);
 
         });
 

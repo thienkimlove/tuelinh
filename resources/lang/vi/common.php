@@ -71,4 +71,13 @@
        'delivery_create_success' => 'Tạo mới nhà phân phối thành công!',
        'delivery_edit_success' => 'Sửa nhà phân phối thành công!',
        'delivery_delete_success' => 'Xóa nhà phân phối thành công!',
+
+       //FRONTEND
+       'home_cate' => 'Trang chủ',
+       'recommend_cate' => 'Giới thiệu',
+       'search_placeholder' => 'Từ khóa tìm kiếm',
+       'contact_cate' => 'Liên hệ',
+       'delivery_cate' => 'Hệ thống phân phối',
+       'yduoc_cate' => 'Tin y dược',
+       'tracuu_cate' => 'Tra cứu'
    ];
